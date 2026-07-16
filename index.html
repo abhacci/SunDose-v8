@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>SunDose v8</title>
+
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="style.css">
+
+<meta name="theme-color" content="#FFD54F">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<!-- Splash -->
+
+<div id="splash">
+
+<div class="logo">☀️</div>
+
+<h1>SunDose</h1>
+
+<p>Made with 💛 for Malak</p>
+
+<span>Version 8</span>
+
+</div>
+
+<div class="background"></div>
+
+<div class="container">
+
+<header>
+
+<div id="sunCharacter">
+
+<div class="sun-face">
+
+<div class="eye left"></div>
+
+<div class="eye right"></div>
+
+<div id="mouth"></div>
+
+</div>
+
+</div>
+
+<h1>SunDose</h1>
+
+<p id="welcome">صباح الخير يا ملك 💛</p>
+
+<p id="sunText">أنا جاهزة أتابع جرعتك النهارده ☀️</p>
+
+</header>
+
+<section class="dashboard">
+
+<div class="stat-card">
+
+<div class="icon">🔥</div>
+
+<h3 id="streak">0</h3>
+
+<p>السلسلة الحالية</p>
+
+</div>
+
+<div class="stat-card">
+
+<div class="icon">🏆</div>
+
+<h3 id="bestStreak">0</h3>
+
+<p>أفضل سلسلة</p>
+
+</div>
+
+<div class="stat-card">
+
+<div class="icon">💊</div>
+
+<h3 id="totalDose">0</h3>
+
+<p>إجمالي الجرعات</p>
+
+</div>
+
+<div class="stat-card">
+
+<div class="icon">🎯</div>
+
+<h3 id="goalPercent">0%</h3>
+
+<p>نسبة الالتزام</p>
+
+</div>
+
+</section>
+
+<section class="card">
+
+<button id="takeDose">
+
+💊 أخدت الجرعة
+
+</button>
+
+<p id="message">
+
+جاهزة لجرعة النهارده؟
+
+</p>
+
+</section>
+
+<section class="card">
+
+<h2>📈 نسبة الالتزام</h2>
+
+<div class="progress">
+
+<div id="progressBar"></div>
+
+</div>
+
+<p id="progressText">
+
+0%
+
+</p>
+
+</section>
+
+<section class="card">
+
+<h2>🏆 الإنجازات</h2>
+
+<div id="badges"></div>
+
+</section>
+
+<section class="card">
+
+<h2>📅 التقويم</h2>
+
+<div id="calendar"></div>
+
+</section>
+
+<section class="card">
+
+<h2>💬 رسالة اليوم</h2>
+
+<p id="quote"></p>
+
+</section>
+<section class="card">
+
+<h2>⚙️ الإعدادات</h2>
+
+<input
+id="nameInput"
+type="text"
+placeholder="اسم المستخدم">
+
+<input
+id="medicineInput"
+type="text"
+placeholder="اسم العلاج">
+
+<label class="switch">
+
+<input type="checkbox" id="darkMode">
+
+<span>🌙 الوضع الليلي</span>
+
+</label>
+
+<label class="switch">
+
+<input type="checkbox" id="soundMode" checked>
+
+<span>🔊 تشغيل الأصوات</span>
+
+</label>
+
+<button id="saveSettings">
+
+💾 حفظ الإعدادات
+
+</button>
+
+</section>
+
+<footer>
+
+<p>
+
+Made with 💛 by Waled
+
+</p>
+
+<p>
+
+SunDose Version 8
+
+</p>
+
+</footer>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
