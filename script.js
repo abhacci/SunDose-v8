@@ -400,7 +400,15 @@ happySun("🌙 متنسيش الجرعة قبل النوم");
 }else{
 
 updateQuote();
+setTimeout(()=>{
 
+sunSpeak(
+sunMessages[
+Math.floor(Math.random()*sunMessages.length)
+]
+);
+
+},1000);
 }
 
 },8000);
@@ -481,5 +489,35 @@ overlay.onclick=closeSideMenu;
 if("serviceWorker" in navigator){
 
 navigator.serviceWorker.register("service-worker.js");
+
+}
+const bubble = document.getElementById("speechBubble");
+const mascot = document.getElementById("sunMascot");
+
+const sunMessages = [
+
+"☀️ صباح الخير يا ملك",
+"💛 مستعدة للجرعة؟",
+"🌸 انتي تقدري تكملي",
+"🌞 أنا فخورة بيكي",
+"✨ يلا ناخد الجرعة"
+
+];
+
+function sunSpeak(text){
+
+bubble.innerHTML=text;
+
+bubble.classList.add("show");
+
+mascot.classList.add("talking");
+
+setTimeout(()=>{
+
+bubble.classList.remove("show");
+
+mascot.classList.remove("talking");
+
+},4500);
 
 }
