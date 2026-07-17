@@ -197,8 +197,20 @@ backdrop-filter:blur(15px);
 border-radius:22px;
 padding:18px;
 text-align:center;
-box-shadow:0 10px 25px rgba(0,0,0
-                            button{
+box-shadow:0 10px 25px rgba(0,0,0,.12);
+}
+
+button{
+width:100%;
+padding:16px;
+border:none;
+border-radius:18px;
+background:#FFD54F;
+font-size:18px;
+font-weight:bold;
+cursor:pointer;
+transition:.25s;
+}
 width:100%;
 padding:16px;
 border:none;
