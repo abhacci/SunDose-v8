@@ -511,3 +511,59 @@ font-size:17px;
 }
 
 }
+/* ==========================
+   Sun Mascot
+========================== */
+
+#sunCharacter{
+position:relative;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+margin-bottom:25px;
+}
+
+#sunMascot{
+animation:sunFloat 3s ease-in-out infinite;
+transition:.5s;
+}
+
+#speechBubble{
+background:white;
+padding:12px 18px;
+border-radius:18px;
+max-width:260px;
+text-align:center;
+font-weight:bold;
+box-shadow:0 10px 20px rgba(0,0,0,.15);
+margin-bottom:15px;
+opacity:0;
+transform:translateY(-20px);
+transition:.5s;
+}
+
+#speechBubble.show{
+opacity:1;
+transform:translateY(0);
+}
+
+@keyframes sunFloat{
+
+0%{transform:translateY(0);}
+50%{transform:translateY(-8px);}
+100%{transform:translateY(0);}
+
+}
+
+@keyframes sunTalk{
+
+0%{transform:scale(1);}
+50%{transform:scale(1.05);}
+100%{transform:scale(1);}
+
+}
+
+.talking{
+animation:sunTalk .35s infinite;
+}
