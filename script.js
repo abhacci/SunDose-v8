@@ -287,3 +287,28 @@ window.addEventListener("load", () => {
     }, 2000);
 
 });
+// ===============================
+// Side Menu
+// ===============================
+
+const menuBtn = document.getElementById("menuBtn");
+const sideMenu = document.getElementById("sideMenu");
+const closeMenu = document.getElementById("closeMenu");
+const overlay = document.getElementById("overlay");
+
+menuBtn.onclick = function(){
+
+sideMenu.classList.add("open");
+overlay.classList.add("show");
+
+}
+
+closeMenu.onclick = closeMenuNow;
+overlay.onclick = closeMenuNow;
+
+function closeMenuNow(){
+
+sideMenu.classList.remove("open");
+overlay.classList.remove("show");
+
+}
