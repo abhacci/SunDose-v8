@@ -298,9 +298,12 @@ const overlay = document.getElementById("overlay");
 
 menuBtn.onclick = function(){
 
+alert("تم الضغط على الزر");
+
 sideMenu.classList.add("open");
 overlay.classList.add("show");
 
+}
 }
 
 closeMenu.onclick = closeMenuNow;
