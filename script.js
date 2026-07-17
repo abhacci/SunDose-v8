@@ -1,7 +1,6 @@
 // ===============================
-// SunDose v8
+// SunDose v8.1
 // Part 1
-// المتغيرات الأساسية
 // ===============================
 
 const quotes = [
@@ -14,13 +13,11 @@ const quotes = [
 "🤍 الالتزام هو النجاح."
 ];
 
-// البيانات المحفوظة
 let streak = Number(localStorage.getItem("streak")) || 0;
 let bestStreak = Number(localStorage.getItem("bestStreak")) || 0;
 let totalDose = Number(localStorage.getItem("totalDose")) || 0;
 let lastDay = localStorage.getItem("lastDay") || "";
 
-// عناصر الصفحة
 const streakBox = document.getElementById("streak");
 const bestBox = document.getElementById("bestStreak");
 const totalBox = document.getElementById("totalDose");
@@ -47,444 +44,327 @@ const sunText = document.getElementById("sunText");
 const darkMode = document.getElementById("darkMode");
 const soundMode = document.getElementById("soundMode");
 
-// ===============================
-// الشمس
-// ===============================
-
 function happySun(text){
 
-    mouth.style.borderRadius = "0 0 40px 40px";
-    sunText.innerHTML = text;
+mouth.style.borderRadius="0 0 40px 40px";
+sunText.innerHTML=text;
 
 }
 
 function sadSun(text){
 
-    mouth.style.borderRadius = "40px 40px 0 0";
-    sunText.innerHTML = text;
+mouth.style.borderRadius="40px 40px 0 0";
+sunText.innerHTML=text;
 
 }
-
 // ===============================
-// رسالة اليوم
+// Part 2
+// Dashboard + Calendar + Badges
 // ===============================
 
 function updateQuote(){
 
-    quote.innerHTML =
-    quotes[Math.floor(Math.random()*quotes.length)];
+quote.innerHTML =
+quotes[Math.floor(Math.random()*quotes.length)];
 
 }
-
-// ===============================
-// لوحة الإحصائيات
-// ===============================
 
 function updateDashboard(){
 
-    streakBox.innerHTML = streak;
-    bestBox.innerHTML = bestStreak;
-    totalBox.innerHTML = totalDose;
+streakBox.innerHTML = streak;
+bestBox.innerHTML = bestStreak;
+totalBox.innerHTML = totalDose;
 
-    let percent = Math.min(
-        Math.round((streak/30)*100),
-        100
-    );
+let percent = Math.min(Math.round((streak/30)*100),100);
 
-    goalBox.innerHTML = percent + "%";
+goalBox.innerHTML = percent + "%";
 
-    progressBar.style.width = percent + "%";
-    progressText.innerHTML = percent + "%";
+progressBar.style.width = percent + "%";
+progressText.innerHTML = percent + "%";
 
 }
-// ===============================
-// SunDose v8
-// Part 2
-// الإنجازات + التقويم
-// ===============================
 
 function updateBadges(){
 
-    badges.innerHTML = "";
+badges.innerHTML = "";
 
-    const data = [
+const data = [
 
-        {need:1,name:"🎉 أول جرعة"},
-        {need:3,name:"🌱 بداية رائعة"},
-        {need:7,name:"🔥 أسبوع كامل"},
-        {need:14,name:"💛 أسبوعان"},
-        {need:30,name:"🏆 شهر كامل"},
-        {need:60,name:"⭐ شهران"},
-        {need:100,name:"🌞 أسطورة الالتزام"}
+{need:1,name:"🎉 أول جرعة"},
+{need:3,name:"🌱 بداية رائعة"},
+{need:7,name:"🔥 أسبوع كامل"},
+{need:14,name:"💛 أسبوعان"},
+{need:30,name:"🏆 شهر كامل"},
+{need:60,name:"⭐ شهران"},
+{need:100,name:"🌞 أسطورة الالتزام"}
 
-    ];
+];
 
-    data.forEach(function(item){
+data.forEach(function(item){
 
-        let badge = document.createElement("div");
+const div = document.createElement("div");
 
-        badge.className = "badge";
+div.className = "badge";
 
-        if(streak >= item.need){
+div.innerHTML =
+(streak >= item.need ? "✅ " : "⬜ ") + item.name;
 
-            badge.innerHTML = "✅ " + item.name;
+badges.appendChild(div);
 
-        }else{
-
-            badge.innerHTML = "⬜ " + item.name;
-
-        }
-
-        badges.appendChild(badge);
-
-    });
+});
 
 }
-
-// ===============================
-// التقويم
-// ===============================
 
 function buildCalendar(){
 
-    calendar.innerHTML = "";
+calendar.innerHTML = "";
 
-    let today = new Date();
+const today = new Date();
 
-    let year = today.getFullYear();
+const days =
+new Date(
+today.getFullYear(),
+today.getMonth()+1,
+0
+).getDate();
 
-    let month = today.getMonth();
+for(let i=1;i<=days;i++){
 
-    let days = new Date(year, month + 1, 0).getDate();
+const d = document.createElement("div");
 
-    for(let i=1;i<=days;i++){
+d.className = "day";
 
-        let day = document.createElement("div");
+d.innerHTML = i;
 
-        day.className = "day";
+if(i === today.getDate()){
 
-        day.innerHTML = i;
+d.classList.add("today");
 
-        if(i === today.getDate()){
+}
 
-            day.classList.add("today");
+if(
+i === today.getDate() &&
+lastDay === today.toISOString().slice(0,10)
+){
 
-        }
+d.classList.add("done");
 
-        if(
-            i === today.getDate() &&
-            lastDay === today.toISOString().slice(0,10)
-        ){
+}
 
-            day.classList.add("done");
+calendar.appendChild(d);
 
-        }
-
-        calendar.appendChild(day);
-
-    }
+}
 
 }
 // ===============================
-// SunDose v8
 // Part 3
-// الإعدادات
+// Settings
 // ===============================
 
 function loadSettings(){
 
-    const userName =
-        localStorage.getItem("userName") || "ملك";
+const userName = localStorage.getItem("userName") || "ملك";
+const medicine = localStorage.getItem("medicine") || "فيتامين د";
 
-    const medicine =
-        localStorage.getItem("medicine") || "فيتامين د";
+nameInput.value = userName;
+medicineInput.value = medicine;
 
-    nameInput.value = userName;
-    medicineInput.value = medicine;
+welcome.innerHTML = "صباح الخير يا " + userName + " 💛";
 
-    welcome.innerHTML =
-        "صباح الخير يا " + userName + " 💛";
+if(localStorage.getItem("darkMode") === "true"){
 
-    if(localStorage.getItem("darkMode") === "true"){
+document.body.classList.add("dark");
+darkMode.checked = true;
 
-        document.body.classList.add("dark");
-        darkMode.checked = true;
+}
 
-    }
+if(localStorage.getItem("soundMode") === "false"){
 
-    if(localStorage.getItem("soundMode") === "false"){
+soundMode.checked = false;
 
-        soundMode.checked = false;
+}
 
-    }
-
-
-// ===============================
-// حفظ الإعدادات
-// ===============================
+}
 
 document.getElementById("saveSettings").onclick = function(){
 
-    localStorage.setItem(
-        "userName",
-        nameInput.value
-    );
+localStorage.setItem("userName",nameInput.value);
+localStorage.setItem("medicine",medicineInput.value);
 
-    localStorage.setItem(
-        "medicine",
-        medicineInput.value
-    );
+localStorage.setItem("darkMode",darkMode.checked);
+localStorage.setItem("soundMode",soundMode.checked);
 
-    localStorage.setItem(
-        "darkMode",
-        darkMode.checked
-    );
+if(darkMode.checked){
 
-    localStorage.setItem(
-        "soundMode",
-        soundMode.checked
-    );
+document.body.classList.add("dark");
 
-    if(darkMode.checked){
+}else{
 
-        document.body.classList.add("dark");
+document.body.classList.remove("dark");
 
-    }else{
+}
 
-        document.body.classList.remove("dark");
+happySun("💛 تم حفظ الإعدادات");
 
-    }
-
-    happySun("💛 تم حفظ الإعدادات");
-
-    message.innerHTML =
-    "✅ تم حفظ الإعدادات بنجاح";
+message.innerHTML = "✅ تم حفظ الإعدادات بنجاح";
 
 };
-    // ===============================
-// SunDose v8
+// ===============================
 // Part 4
-// تسجيل الجرعة
+// Take Dose
 // ===============================
 
 takeDose.onclick = function(){
 
-    let today = new Date().toISOString().slice(0,10);
+const today = new Date().toISOString().slice(0,10);
 
-    if(today === lastDay){
+if(today === lastDay){
 
-        message.innerHTML =
-        "💛 تم تسجيل الجرعة بالفعل اليوم.";
+message.innerHTML = "💛 تم تسجيل الجرعة بالفعل اليوم.";
+happySun("🌞 ممتاز... الجرعة متسجلة.");
 
-        happySun("🌞 الجرعة متسجلة بالفعل.");
+return;
 
-        return;
+}
 
-    }
+lastDay = today;
 
-    lastDay = today;
+streak++;
+totalDose++;
 
-    streak++;
-    totalDose++;
+if(streak > bestStreak){
 
-    if(streak > bestStreak){
+bestStreak = streak;
 
-        bestStreak = streak;
+}
 
-    }
+localStorage.setItem("streak",streak);
+localStorage.setItem("bestStreak",bestStreak);
+localStorage.setItem("totalDose",totalDose);
+localStorage.setItem("lastDay",lastDay);
 
-    localStorage.setItem("streak",streak);
-    localStorage.setItem("bestStreak",bestStreak);
-    localStorage.setItem("totalDose",totalDose);
-    localStorage.setItem("lastDay",lastDay);
+updateDashboard();
+updateBadges();
+buildCalendar();
+updateQuote();
 
-    updateDashboard();
-    updateBadges();
-    buildCalendar();
-    updateQuote();
+message.innerHTML = "🎉 أحسنتِ يا ملك.";
 
-    message.innerHTML =
-    "🎉 أحسنتِ يا ملك، الجرعة اتسجلت.";
+happySun("🌞 أحسنتِ! استمري 💛");
 
-    happySun("☀️ ممتاز! كملي كده.");
+if(soundMode.checked){
 
-    document.body.animate(
-    [
-        {transform:"scale(1)"},
-        {transform:"scale(1.02)"},
-        {transform:"scale(1)"}
-    ],
-    {
-        duration:300
-    });
+const audio = new Audio("success.mp3");
+
+audio.play().catch(()=>{});
+
+}
+
+document.body.animate(
+
+[
+{transform:"scale(1)"},
+{transform:"scale(1.02)"},
+{transform:"scale(1)"}
+],
+
+{
+duration:300
+}
+
+);
 
 };
-
 // ===============================
-// تشغيل أول مرة
+// Part 5
+// Start App + Splash + Side Menu
 // ===============================
 
 loadSettings();
-
 updateDashboard();
-
 updateBadges();
-
 buildCalendar();
+updateQuote();
+
+setInterval(function(){
+
+const hour = new Date().getHours();
+
+if(hour >= 20){
+
+sunText.innerHTML = "🌙 متنسيش الجرعة قبل النوم";
+
+}else{
 
 updateQuote();
-    // ===============================
-// SunDose v8
-// Part 5
-// Splash Screen + Side Menu
-// ===============================
 
-// شاشة البداية
-window.addEventListener("load", function () {
+}
 
-    setTimeout(function () {
+},8000);
 
-        const splash = document.getElementById("splash");
+// Splash
 
-        if (splash) {
+window.addEventListener("load",function(){
 
-            splash.classList.add("hide");
+setTimeout(function(){
 
-        }
+const splash = document.getElementById("splash");
 
-    }, 2000);
+if(splash){
+
+splash.classList.add("hide");
+
+}
+
+},2000);
 
 });
 
-// عناصر القائمة الجانبية
+// Side Menu
+
 const menuBtn = document.getElementById("menuBtn");
 const sideMenu = document.getElementById("sideMenu");
 const closeMenu = document.getElementById("closeMenu");
 const overlay = document.getElementById("overlay");
 
-// فتح القائمة
 if(menuBtn){
 
-menuBtn.addEventListener("click",function(){
+menuBtn.onclick = function(){
 
-    sideMenu.classList.add("open");
-    overlay.classList.add("show");
+sideMenu.classList.add("open");
+overlay.classList.add("show");
 
-});
+};
 
 }
 
-// غلق القائمة
 function closeSideMenu(){
 
-    sideMenu.classList.remove("open");
-    overlay.classList.remove("show");
+sideMenu.classList.remove("open");
+overlay.classList.remove("show");
 
 }
 
 if(closeMenu){
 
-closeMenu.addEventListener("click",closeSideMenu);
+closeMenu.onclick = closeSideMenu;
 
 }
 
 if(overlay){
 
-overlay.addEventListener("click",closeSideMenu);
+overlay.onclick = closeSideMenu;
 
 }
 
-// زر ESC للكمبيوتر
-document.addEventListener("keydown",function(e){
-
-    if(e.key==="Escape"){
-
-        closeSideMenu();
-
-    }
-
-});
-    // ===============================
-// SunDose v8
-// Part 6
-// الرسائل + الأصوات + الإشعارات
-// ===============================
-
-// تغيير رسالة الشمس كل فترة
-setInterval(function(){
-
-    const hour = new Date().getHours();
-
-    if(hour >= 20){
-
-        sunText.innerHTML = "🌙 متنسيش الجرعة قبل النوم.";
-
-    }else if(hour >= 12){
-
-        sunText.innerHTML = "☀️ أتمنى يومك يكون جميل.";
-
-    }else{
-
-        updateQuote();
-
-    }
-
-},8000);
-
-// ===============================
-// تشغيل صوت بسيط
-// ===============================
-
-function playClick(){
-
-    if(!soundMode.checked) return;
-
-    try{
-
-        const audio = new Audio("click.mp3");
-
-        audio.volume = 0.4;
-
-        audio.play();
-
-    }catch(e){}
-
-}
-
-document.querySelectorAll("button").forEach(function(btn){
-
-    btn.addEventListener("click",playClick);
-
-});
-
-// ===============================
-// إشعار يومي
-// ===============================
-
-if("Notification" in window){
-
-    if(Notification.permission !== "granted"){
-
-        Notification.requestPermission();
-
-    }
-
-}
-
-// ===============================
 // Service Worker
-// ===============================
 
 if("serviceWorker" in navigator){
 
-    navigator.serviceWorker
-    .register("service-worker.js")
-    .catch(function(err){
+window.addEventListener("load",function(){
 
-        console.log(err);
+navigator.serviceWorker.register("service-worker.js");
 
-    });
+});
 
 }
-
-console.log("✅ SunDose v8 Loaded Successfully");
