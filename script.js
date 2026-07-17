@@ -546,3 +546,16 @@ mascot.classList.remove("talking");
 },4500);
 
 }
+// =========================
+// تشغيل سنا
+// =========================
+
+window.addEventListener("load", function () {
+
+    setTimeout(function () {
+
+        sana.say("☀️ صباح الخير يا ملك 💛");
+
+    }, 1000);
+
+});
