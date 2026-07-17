@@ -1,6 +1,6 @@
-/* =========================
-   SunDose v8
-========================= */
+/* ==========================
+   SunDose v8.1
+========================== */
 
 *{
 margin:0;
@@ -64,187 +64,106 @@ pointer-events:none;
 }
 
 #splash .logo{
-
 font-size:80px;
-
 animation:spinSun 6s linear infinite;
-
 }
 
 #splash h1{
-
 font-size:42px;
-
-color:#fff;
-
+color:white;
 margin-top:15px;
-
 }
 
 #splash p{
-
 margin-top:8px;
-
 color:white;
-
 font-size:18px;
-
 }
 
 #splash span{
-
 margin-top:12px;
-
 background:white;
-
 padding:8px 18px;
-
 border-radius:999px;
-
 font-weight:bold;
-
 color:#D89A00;
-
-}
-
-@keyframes hideSplash{
-
-to{
-
-opacity:0;
-
-visibility:hidden;
-
-}
-
 }
 
 @keyframes spinSun{
 
 100%{
-
 transform:rotate(360deg);
-
 }
 
 }
 
 header{
-
 text-align:center;
-
 margin-bottom:28px;
-
 }
 
 #sunCharacter{
-
 display:flex;
-
 justify-content:center;
-
 margin-bottom:18px;
-
 }
 
 .sun-face{
-
 width:145px;
-
 height:145px;
-
 background:#FFD54F;
-
 border-radius:50%;
-
 position:relative;
-
 box-shadow:0 0 45px rgba(255,213,79,.6);
-
 animation:floatSun 3s ease-in-out infinite;
-
 }
-
 .eye{
-
 width:14px;
-
 height:14px;
-
 background:#333;
-
 border-radius:50%;
-
 position:absolute;
-
 top:48px;
-
 animation:blink 5s infinite;
-
 }
 
 .left{
-
 left:40px;
-
 }
 
 .right{
-
 right:40px;
-
 }
 
 #mouth{
-
 position:absolute;
-
 bottom:34px;
-
 left:48px;
-
 width:48px;
-
 height:24px;
-
 border:5px solid #333;
-
 border-top:none;
-
 border-left:none;
-
 border-right:none;
-
 border-radius:0 0 40px 40px;
-
 transition:.3s;
-
 }
 
 #sunText{
-
 margin-top:10px;
-
 font-size:17px;
-
 font-weight:600;
-
 color:#666;
-
 }
 
 @keyframes blink{
 
 0%,96%,100%{
-
 transform:scaleY(1);
-
 }
 
 98%{
-
 transform:scaleY(.1);
-
 }
 
 }
@@ -252,135 +171,40 @@ transform:scaleY(.1);
 @keyframes floatSun{
 
 0%{
-
 transform:translateY(0);
-
 }
 
 50%{
-
 transform:translateY(-8px);
-
 }
 
 100%{
-
 transform:translateY(0);
-
 }
 
 }
 
 .dashboard{
-
 display:grid;
-
 grid-template-columns:repeat(2,1fr);
-
 gap:15px;
-
 margin-bottom:22px;
-
 }
 
 .stat-card{
-
-background:rgba(255,255,255,.78);
-
-backdrop-filter:blur(16px);
-
+background:rgba(255,255,255,.8);
+backdrop-filter:blur(15px);
 border-radius:22px;
-
 padding:18px;
-
 text-align:center;
-
-box-shadow:0 10px 25px rgba(0,0,0,.08);
-
-transition:.3s;
-
-}
-
-.stat-card:hover{
-
-transform:translateY(-5px);
-
-}
-
-.icon{
-
-font-size:32px;
-
-margin-bottom:10px;
-
-}
-
-.stat-card h3{
-
-font-size:32px;
-
-color:#D89A00;
-
-margin-bottom:5px;
-
-}
-
-.stat-card p{
-
-font-size:14px;
-
-color:#666;
-
-}
-.card{
-background:rgba(255,255,255,.82);
-backdrop-filter:blur(18px);
-border-radius:24px;
-padding:20px;
-margin-bottom:18px;
-box-shadow:0 10px 30px rgba(0,0,0,.08);
-transition:.3s;
-}
-
-.card:hover{
-transform:translateY(-3px);
-}
-
-.card h2{
-font-size:22px;
-margin-bottom:15px;
-color:#D89A00;
-}
-
-.progress{
-height:16px;
-background:#ECECEC;
-border-radius:999px;
-overflow:hidden;
-margin-top:15px;
-}
-
-#progressBar{
-height:100%;
-width:0%;
-background:linear-gradient(90deg,#FFD54F,#FFB300);
-transition:.5s;
-}
-
-#progressText{
-margin-top:10px;
-text-align:center;
-font-weight:bold;
-color:#666;
-}
-
-button{
+box-shadow:0 10px 25px rgba(0,0,0
+                            button{
 width:100%;
 padding:16px;
 border:none;
 border-radius:18px;
 background:#FFD54F;
-font-size:19px;
+font-size:18px;
 font-weight:bold;
 cursor:pointer;
 transition:.25s;
@@ -391,17 +215,17 @@ transform:scale(1.03);
 }
 
 button:active{
-transform:scale(.96);
+transform:scale(.97);
 }
 
 input{
 width:100%;
 padding:14px;
 border-radius:14px;
-border:1px solid #ddd;
+border:1px solid #DDD;
 margin-bottom:12px;
 font-size:16px;
-background:white;
+background:#FFF;
 }
 
 .switch{
@@ -424,19 +248,19 @@ height:45px;
 display:flex;
 justify-content:center;
 align-items:center;
-border-radius:12px;
 background:#F3F3F3;
+border-radius:12px;
 font-weight:bold;
-transition:.25s;
+transition:.3s;
+}
+
+.day.today{
+border:2px solid #FFB300;
 }
 
 .day.done{
 background:#FFD54F;
 color:#333;
-}
-
-.day.today{
-border:2px solid #FFB300;
 }
 
 #badges{
@@ -457,8 +281,90 @@ font-weight:bold;
 footer{
 text-align:center;
 padding:25px 10px;
-color:#777;
 font-size:14px;
+color:#777;
+}
+/* ==========================
+   Side Menu
+========================== */
+
+.menu-btn{
+position:fixed;
+top:18px;
+right:18px;
+width:52px;
+height:52px;
+border:none;
+border-radius:50%;
+background:#FFD54F;
+color:#333;
+font-size:26px;
+font-weight:bold;
+cursor:pointer;
+z-index:10001;
+box-shadow:0 8px 20px rgba(0,0,0,.15);
+}
+
+#overlay{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.35);
+opacity:0;
+visibility:hidden;
+transition:.3s;
+z-index:9998;
+}
+
+#overlay.show{
+opacity:1;
+visibility:visible;
+}
+
+.side-menu{
+position:fixed;
+top:0;
+right:-340px;
+width:320px;
+max-width:90%;
+height:100%;
+background:#FFF;
+padding:20px;
+overflow-y:auto;
+transition:right .35s ease;
+box-shadow:-10px 0 30px rgba(0,0,0,.20);
+z-index:9999;
+}
+
+.side-menu.open{
+right:0;
+}
+
+.menu-header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:20px;
+}
+
+.menu-header h2{
+margin:0;
+color:#D89A00;
+}
+
+#closeMenu{
+width:45px;
+height:45px;
+padding:0;
+border-radius:50%;
+font-size:22px;
+}
+
+.menu-content input,
+.menu-content button{
+margin-bottom:15px;
 }
 
 .dark{
@@ -472,29 +378,29 @@ background:#121212;
 
 .dark .card,
 .dark .stat-card{
-background:rgba(35,35,35,.88);
-color:white;
+background:#252525;
+color:#FFF;
 }
 
 .dark input{
 background:#1E1E1E;
-color:white;
+color:#FFF;
 border:1px solid #444;
 }
 
-.dark .day{
-background:#2C2C2C;
-color:white;
+.dark .side-menu{
+background:#222;
+color:#FFF;
 }
 
 .dark .badge{
-background:#2E2E2E;
+background:#333;
 color:#FFD54F;
 }
 
-.dark #progressText,
-.dark #sunText{
-color:#DDD;
+.dark .day{
+background:#2D2D2D;
+color:#FFF;
 }
 
 @media(max-width:480px){
@@ -525,102 +431,12 @@ left:38px;
 bottom:28px;
 }
 
-.dashboard{
-gap:10px;
-}
-
 .stat-card h3{
 font-size:26px;
 }
 
-h1{
-font-size:30px;
-}
-
 button{
-font-size:18px;
+font-size:17px;
 }
 
-}
-/* =========================
-   Side Menu
-========================= */
-
-.menu-btn{
-position:fixed;
-top:18px;
-right:18px;
-width:52px;
-height:52px;
-border:none;
-border-radius:50%;
-background:#FFD54F;
-font-size:26px;
-font-weight:bold;
-cursor:pointer;
-z-index:10001;
-box-shadow:0 8px 20px rgba(0,0,0,.15);
-}
-
-#overlay{
-position:fixed;
-inset:0;
-background:rgba(0,0,0,.35);
-opacity:0;
-visibility:hidden;
-transition:.3s;
-z-index:9998;
-}
-
-#overlay.show{
-opacity:1;
-visibility:visible;
-}
-
-.side-menu{
-position:fixed;
-top:0;
-right:-340px;
-width:320px;
-height:100%;
-background:#fff;
-padding:20px;
-overflow-y:auto;
-transition:.35s;
-box-shadow:-10px 0 30px rgba(0,0,0,.2);
-z-index:9999;
-}
-
-.side-menu.open{
-right:0;
-}
-
-.menu-header{
-display:flex;
-justify-content:space-between;
-align-items:center;
-margin-bottom:20px;
-}
-
-.menu-header h2{
-margin:0;
-color:#D89A00;
-}
-
-#closeMenu{
-width:45px;
-height:45px;
-border-radius:50%;
-padding:0;
-font-size:22px;
-}
-
-.menu-content input,
-.menu-content button{
-margin-bottom:15px;
-}
-
-.dark .side-menu{
-background:#222;
-color:#fff;
 }
