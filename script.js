@@ -506,12 +506,37 @@ const sunMessages = [
 
 function sunSpeak(text){
 
-bubble.innerHTML=text;
+bubble.innerHTML = text;
 
 bubble.classList.add("show");
 
 mascot.classList.add("talking");
 
+// تحريك العينين
+document.querySelector(".left").classList.add("look-left");
+document.querySelector(".right").classList.add("look-left");
+
+setTimeout(()=>{
+
+document.querySelector(".left").classList.remove("look-left");
+document.querySelector(".right").classList.remove("look-left");
+
+},900);
+
+// غمزة بعد شوية
+setTimeout(()=>{
+
+document.querySelector(".left").style.transform="scaleY(.1)";
+
+setTimeout(()=>{
+
+document.querySelector(".left").style.transform="scaleY(1)";
+
+},180);
+
+},2200);
+
+// إنهاء الكلام
 setTimeout(()=>{
 
 bubble.classList.remove("show");
