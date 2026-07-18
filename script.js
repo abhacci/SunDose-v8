@@ -550,12 +550,56 @@ mascot.classList.remove("talking");
 // تشغيل سنا
 // =========================
 
+// =========================
+// أول لقاء مع سنا
+// =========================
+
 window.addEventListener("load", function () {
 
-    setTimeout(function () {
+    const firstVisit = localStorage.getItem("firstVisit");
 
-        sana.say("☀️ صباح الخير يا ملك 💛");
+    if (!firstVisit) {
 
-    }, 1000);
+        setTimeout(() => {
+
+            sana.say("🌞 أهلاً... أنا سنا");
+
+        }, 1000);
+
+        setTimeout(() => {
+
+            sana.say("💛 يسعدني جدًا إنك هنا.");
+
+        }, 5000);
+
+        setTimeout(() => {
+
+            sana.say("✨ اسمي سنا... ومعناه الضوء والإشراق.");
+
+        }, 9000);
+
+        setTimeout(() => {
+
+            sana.say("☀️ هدفي أساعدك تهتم بصحتك خطوة بخطوة.");
+
+        }, 14000);
+
+        setTimeout(() => {
+
+            sana.say("🤝 من النهارده... إحنا فريق واحد.");
+
+            localStorage.setItem("firstVisit", "true");
+
+        }, 19000);
+
+    } else {
+
+        setTimeout(() => {
+
+            sana.say("☀️ سعيده أشوفك من جديد.");
+
+        }, 1200);
+
+    }
 
 });
