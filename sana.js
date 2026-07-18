@@ -1,28 +1,32 @@
- // =========================
-// Sana Engine v1
+// =========================
+// Sana Engine v2
 // =========================
 
 class Sana {
 
     constructor() {
+
         this.name = "سنا";
+
+        this.bubble = document.getElementById("speechBubble");
+
     }
 
-    say(text) {
+    say(text, time = 4000) {
 
-        const bubble = document.getElementById("speechBubble");
+        if (!this.bubble) return;
 
-        if (!bubble) return;
+        this.bubble.innerHTML = text;
 
-        bubble.innerHTML = text;
+        this.bubble.classList.add("show");
 
-        bubble.classList.add("show");
+        clearTimeout(this.timer);
 
-        setTimeout(() => {
+        this.timer = setTimeout(() => {
 
-            bubble.classList.remove("show");
+            this.bubble.classList.remove("show");
 
-        }, 4000);
+        }, time);
 
     }
 
