@@ -564,19 +564,19 @@ window.addEventListener("load", function () {
 
             sana.say("🌞 أهلاً... أنا سنا");
 
-        }, 1000);
+        }, 1500);
 
         setTimeout(() => {
 
             sana.say("💛 يسعدني جدًا إنك هنا.");
 
-        }, 5000);
+        }, 9000);
 
         setTimeout(() => {
 
             sana.say("✨ اسمي سنا... ومعناه الضوء والإشراق.");
 
-        }, 9000);
+        }, 17000);
 
         setTimeout(() => {
 
@@ -590,7 +590,7 @@ window.addEventListener("load", function () {
 
             localStorage.setItem("firstVisit", "true");
 
-        }, 19000);
+        }, 26000);
 
     } else {
 
@@ -598,7 +598,7 @@ window.addEventListener("load", function () {
 
             sana.say("☀️ سعيده أشوفك من جديد.");
 
-        }, 1200);
+        }, 7000);
 
     }
 
