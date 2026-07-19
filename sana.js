@@ -1,40 +1,84 @@
-// =========================
-// Sana Engine v3
-// =========================
+// ==========================================
+// Sana AI Engine v2
+// ==========================================
 
-class Sana {
+class Sana{
 
-    constructor() {
+    constructor(){
 
-        this.name = "سنا";
+        this.name="سنا";
 
-        this.bubble = document.getElementById("speechBubble");
-        this.image = document.getElementById("sana");
+        this.state="happy";
+
+        this.isTalking=false;
 
     }
 
-    say(text, time = 4000) {
+    async think(time=1200){
 
-        if (!this.bubble) return;
+        this.state="thinking";
 
-        this.bubble.classList.add("show");
-        this.bubble.innerHTML = "";
+        const img=document.getElementById("sana");
 
-        clearTimeout(this.timer);
+        if(img){
 
-        let i = 0;
+            img.src="images/thinking.png";
 
-        const typing = setInterval(() => {
+        }
 
-            this.bubble.innerHTML += text.charAt(i);
+        return new Promise(resolve=>{
 
-            // حركة بسيطة لسنا أثناء الكلام
-            if (this.image) {
+            setTimeout(resolve,time);
 
-                this.image.style.transform = "scale(1.03)";
+        });
 
-                setTimeout(() => {
+    }
 
+    async happy(){
+
+        this.state="happy";
+
+        const img=document.getElementById("sana");
+
+        if(img){
+
+            img.src="images/happy.png";
+
+        }
+
+    }
+
+    async sleep(){
+
+        this.state="sleep";
+
+        const img=document.getElementById("sana");
+
+        if(img){
+
+            img.src="images/sleep.png";
+
+        }
+
+    }
+
+    async talk(text){
+
+        this.isTalking=true;
+
+        await this.think(700);
+
+        await sanaSpeak(text);
+
+        this.isTalking=false;
+
+        await this.happy();
+
+    }
+
+}
+
+const sana=new Sana();
                     this.image.style.transform = "scale(1)";
 
                 }, 80);
