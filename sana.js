@@ -1,108 +1,206 @@
-// ==========================================
-// Sana AI Engine v2
-// ==========================================
+"use strict";
 
-class Sana{
+/* ==========================================
+   Sana AI v10
+========================================== */
 
-    constructor(){
+const sanaImage=document.getElementById("sana");
+const speechBubble=document.getElementById("speechBubble");
+const speechText=document.getElementById("speechText");
 
-        this.name="سنا";
+const sana={
 
-        this.state="happy";
+busy:false,
 
-        this.isTalking=false;
+typingSpeed:35
 
-    }
+};
 
-    async think(time=1200){
+const sanaMessages=[
 
-        this.state="thinking";
+"☀️ صباح الخير",
 
-        const img=document.getElementById("sana");
+"💛 أنا معاك كل يوم",
 
-        if(img){
+"🌸 متنساش جرعتك",
 
-            img.src="images/thinking.png";
+"✨ الاستمرار هو سر النجاح",
 
-        }
+"🌞 فخور بيك جدًا"
 
-        return new Promise(resolve=>{
+];
+/* ==========================================
+   Speak
+========================================== */
 
-            setTimeout(resolve,time);
+function wait(ms){
 
-        });
-
-    }
-
-    async happy(){
-
-        this.state="happy";
-
-        const img=document.getElementById("sana");
-
-        if(img){
-
-            img.src="images/happy.png";
-
-        }
-
-    }
-
-    async sleep(){
-
-        this.state="sleep";
-
-        const img=document.getElementById("sana");
-
-        if(img){
-
-            img.src="images/sleep.png";
-
-        }
-
-    }
-
-    async talk(text){
-
-        this.isTalking=true;
-
-        await this.think(700);
-
-        await sanaSpeak(text);
-
-        this.isTalking=false;
-
-        await this.happy();
-
-    }
+return new Promise(resolve=>setTimeout(resolve,ms));
 
 }
 
-const sana=new Sana();
-                    this.image.style.transform = "scale(1)";
+async function sanaSpeak(text){
 
-                }, 80);
+if(sana.busy)return;
 
-            }
+sana.busy=true;
 
-            i++;
+speechBubble.style.display="block";
 
-            if (i >= text.length) {
+speechText.textContent="";
 
-                clearInterval(typing);
+for(const ch of text){
 
-                this.timer = setTimeout(() => {
+speechText.textContent+=ch;
 
-                    this.bubble.classList.remove("show");
-
-                }, time);
-
-            }
-
-        }, 45);
-
-    }
+await wait(sana.typingSpeed);
 
 }
 
-const sana = new Sana();
+await wait(2500);
+
+speechBubble.style.display="none";
+
+sana.busy=false;
+
+}
+/* ==========================================
+   Sana Animation
+========================================== */
+
+function sanaState(state){
+
+switch(state){
+
+case "happy":
+
+sanaImage.src="images/happy.png";
+
+break;
+
+case "thinking":
+
+sanaImage.src="images/thinking.png";
+
+break;
+
+case "sleep":
+
+sanaImage.src="images/sleep.png";
+
+break;
+
+case "talking":
+
+sanaImage.src="images/talking.png";
+
+break;
+
+default:
+
+sanaImage.src="images/happy.png";
+
+}
+
+}
+
+async function sanaTalk(text){
+
+sanaState("talking");
+
+await sanaSpeak(text);
+
+sanaState("happy");
+
+}
+/* ==========================================
+   Welcome
+========================================== */
+
+async function welcomeUser(){
+
+const name=
+
+localStorage.getItem("userName") || "";
+
+if(name===""){
+
+await sanaTalk("☀️ أهلاً بك في SunDose");
+
+}else{
+
+await sanaTalk("☀️ أهلاً "+name+" 💛");
+
+}
+
+}
+
+window.addEventListener("load",async()=>{
+
+await wait(1000);
+
+welcomeUser();
+
+});
+/* ==========================================
+   Random Messages
+========================================== */
+
+setInterval(async()=>{
+
+if(sana.busy)return;
+
+const text=
+
+sanaMessages[
+
+Math.floor(
+
+Math.random()*sanaMessages.length
+
+)
+
+];
+
+await sanaTalk(text);
+
+},180000);
+/* ==========================================
+   Blink
+========================================== */
+
+setInterval(()=>{
+
+sanaImage.classList.add("blink");
+
+setTimeout(()=>{
+
+sanaImage.classList.remove("blink");
+
+},180);
+
+},5000);
+
+/* ==========================================
+   Day Events
+========================================== */
+
+setInterval(async()=>{
+
+if(sana.busy)return;
+
+const hour=new Date().getHours();
+
+if(hour>=22){
+
+await sanaTalk("🌙 تصبح على خير");
+
+}
+
+else if(hour>=6 && hour<=10){
+
+await sanaTalk("☀️ صباح الخير");
+
+}
+
+},600000);
