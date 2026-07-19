@@ -65,1423 +65,6 @@ margin:auto;
 padding:18px;
 
 }
-linear-gradient(
-180deg,
-var(--background1),
-var(--background2)
-);
-
-animation:bgMove 12s ease-in-out infinite alternate;
-
-}
-
-@keyframes bgMove{
-
-0%{
-
-transform:scale(1);
-
-}
-
-100%{
-
-transform:scale(1.08);
-
-}
-
-}
-
-.container{
-
-width:100%;
-
-max-width:430px;
-
-margin:auto;
-
-padding:22px;
-
-}
-
-header{
-
-text-align:center;
-
-margin-bottom:30px;
-
-}
-
-h1{
-
-font-size:34px;
-
-font-weight:700;
-
-margin-top:12px;
-
-color:#D89A00;
-
-}
-
-#welcome{
-
-margin-top:10px;
-
-font-size:18px;
-
-font-weight:700;
-
-color:var(--text);
-
-}
-
-#sunText{
-
-margin-top:8px;
-
-font-size:16px;
-
-color:var(--subtext);
-
-line-height:1.7;
-
-}
-
-#sunCharacter{
-
-display:flex;
-
-flex-direction:column;
-
-align-items:center;
-
-justify-content:center;
-
-position:relative;
-
-margin-bottom:28px;
-
-}
-
-#sana{
-
-width:190px;
-
-max-width:82%;
-
-animation:sanaFloat 3.4s ease-in-out infinite;
-
-transition:.35s;
-
-user-select:none;
-
-pointer-events:none;
-
-}
-
-@keyframes sanaFloat{
-
-0%{
-
-transform:translateY(0);
-
-}
-
-50%{
-
-transform:translateY(-10px);
-
-}
-
-100%{
-
-transform:translateY(0);
-
-}
-
-}
-
-/* ======================
-   Speech Bubble
-====================== */
-
-#speechBubble{
-
-width:100%;
-
-max-width:310px;
-
-background:#ffffff;
-
-border-radius:24px;
-
-padding:18px;
-
-margin-bottom:18px;
-
-box-shadow:var(--shadow);
-
-opacity:0;
-
-transform:translateY(-12px);
-
-transition:.35s;
-
-}
-
-#speechBubble.show{
-
-opacity:1;
-
-transform:translateY(0);
-
-}
-
-#speechText{
-
-font-size:17px;
-
-line-height:1.9;
-
-text-align:center;
-
-color:var(--text);
-
-min-height:65px;
-
-}
-
-.choiceBtn{
-
-width:100%;
-
-padding:14px;
-
-margin-top:12px;
-
-border:none;
-
-border-radius:16px;
-
-background:var(--primary);
-
-font-size:17px;
-
-font-weight:bold;
-
-cursor:pointer;
-
-transition:.25s;
-
-}
-
-.choiceBtn:hover{
-
-transform:scale(1.02);
-
-}
-
-.choiceBtn:active{
-
-transform:scale(.98);
-
-}
-
-#userNameInput,
-#birthInput{
-
-width:100%;
-
-padding:14px;
-
-margin-top:12px;
-
-border-radius:14px;
-
-border:1px solid #ddd;
-
-font-size:16px;
-
-outline:none;
-
-}transform:scale(1.08);
-}
-
-}
-
-.container{
-max-width:430px;
-margin:auto;
-padding:22px;
-}
-
-#splash{
-position:fixed;
-inset:0;
-background:#FFD54F;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-z-index:9999;
-transition:opacity .8s;
-}
-
-#splash.hide{
-opacity:0;
-visibility:hidden;
-pointer-events:none;
-}
-
-#splash .logo{
-font-size:80px;
-animation:spinSun 6s linear infinite;
-}
-
-#splash h1{
-font-size:42px;
-color:white;
-margin-top:15px;
-}
-
-#splash p{
-margin-top:8px;
-color:white;
-font-size:18px;
-}
-
-#splash span{
-margin-top:12px;
-background:white;
-padding:8px 18px;
-border-radius:999px;
-font-weight:bold;
-color:#D89A00;
-}
-
-@keyframes spinSun{
-
-100%{
-transform:rotate(360deg);
-}
-
-}
-
-header{
-text-align:center;
-margin-bottom:28px;
-}
-
-#sunCharacter{
-display:flex;
-flex-direction:column;
-align-items:center;
-justify-content:center;
-margin-bottom:25px;
-position:relative;
-}
-
-.sun-face{
-width:145px;
-height:145px;
-background:#FFD54F;
-border-radius:50%;
-position:relative;
-box-shadow:0 0 45px rgba(255,213,79,.6);
-animation:floatSun 3s ease-in-out infinite;
-}
-.eye{
-width:14px;
-height:14px;
-background:#333;
-border-radius:50%;
-position:absolute;
-top:48px;
-animation:blink 5s infinite;
-}
-
-.left{
-left:40px;
-}
-
-.right{
-right:40px;
-}
-
-#mouth{
-position:absolute;
-bottom:34px;
-left:48px;
-width:48px;
-height:24px;
-border:5px solid #333;
-border-top:none;
-border-left:none;
-border-right:none;
-border-radius:0 0 40px 40px;
-transition:.3s;
-}
-
-#sunText{
-margin-top:10px;
-font-size:17px;
-font-weight:600;
-color:#666;
-}
-
-@keyframes blink{
-
-0%,96%,100%{
-transform:scaleY(1);
-}
-
-98%{
-transform:scaleY(.1);
-}
-
-}
-
-@keyframes floatSun{
-
-0%{
-transform:translateY(0);
-}
-
-50%{
-transform:translateY(-8px);
-}
-
-100%{
-transform:translateY(0);
-}
-
-}
-
-.dashboard{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:15px;
-margin-bottom:22px;
-}
-
-.stat-card{
-background:rgba(255,255,255,.8);
-backdrop-filter:blur(15px);
-border-radius:22px;
-padding:18px;
-text-align:center;
-box-shadow:0 10px 25px rgba(0,0,0,.12);
-}
-
-.stat-card .icon{
-font-size:30px;
-margin-bottom:8px;
-}
-
-.stat-card h3{
-font-size:32px;
-margin:8px 0;
-color:#D89A00;
-}
-
-.stat-card p{
-font-size:15px;
-color:#666;
-}
-
-.card{
-background:rgba(255,255,255,.85);
-backdrop-filter:blur(15px);
-border-radius:22px;
-padding:20px;
-margin-bottom:18px;
-box-shadow:0 10px 25px rgba(0,0,0,.08);
-}
-
-.card h2{
-margin-bottom:15px;
-font-size:20px;
-}
-
-.progress{
-width:100%;
-height:14px;
-background:#ECECEC;
-border-radius:999px;
-overflow:hidden;
-margin:12px 0;
-}
-
-#progressBar{
-height:100%;
-width:0%;
-background:#FFD54F;
-border-radius:999px;
-transition:.4s;
-}
-
-button{
-width:100%;
-padding:16px;
-border:none;
-border-radius:18px;
-background:#FFD54F;
-font-size:18px;
-font-weight:bold;
-cursor:pointer;
-transition:.25s;
-}
-
-button{
-width:100%;
-padding:16px;
-border:none;
-border-radius:18px;
-background:#FFD54F;
-font-size:18px;
-font-weight:bold;
-cursor:pointer;
-transition:.25s;
-}
-width:100%;
-padding:16px;
-border:none;
-border-radius:18px;
-background:#FFD54F;
-font-size:18px;
-font-weight:bold;
-cursor:pointer;
-transition:.25s;
-}
-
-button:hover{
-transform:scale(1.03);
-}
-
-button:active{
-transform:scale(.97);
-}
-
-input{
-width:100%;
-padding:14px;
-border-radius:14px;
-border:1px solid #DDD;
-margin-bottom:12px;
-font-size:16px;
-background:#FFF;
-}
-
-.switch{
-display:flex;
-align-items:center;
-gap:10px;
-margin:12px 0;
-font-weight:bold;
-}
-
-#calendar{
-display:grid;
-grid-template-columns:repeat(7,1fr);
-gap:8px;
-margin-top:10px;
-}
-
-.day{
-height:45px;
-display:flex;
-justify-content:center;
-align-items:center;
-background:#F3F3F3;
-border-radius:12px;
-font-weight:bold;
-transition:.3s;
-}
-
-.day.today{
-border:2px solid #FFB300;
-}
-
-.day.done{
-background:#FFD54F;
-color:#333;
-}
-
-#badges{
-display:flex;
-flex-wrap:wrap;
-gap:10px;
-margin-top:12px;
-}
-
-.badge{
-padding:10px 16px;
-border-radius:999px;
-background:#FFF4C6;
-font-size:14px;
-font-weight:bold;
-}
-
-footer{
-text-align:center;
-padding:25px 10px;
-font-size:14px;
-color:#777;
-}
-/* ==========================
-   Side Menu
-========================== */
-
-.menu-btn{
-position:fixed;
-top:18px;
-right:18px;
-width:52px;
-height:52px;
-border:none;
-border-radius:50%;
-background:#FFD54F;
-color:#333;
-font-size:26px;
-font-weight:bold;
-cursor:pointer;
-z-index:10001;
-box-shadow:0 8px 20px rgba(0,0,0,.15);
-}
-
-#overlay{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,.35);
-opacity:0;
-visibility:hidden;
-transition:.3s;
-z-index:9998;
-}
-
-#overlay.show{
-opacity:1;
-visibility:visible;
-}
-
-.side-menu{
-position:fixed;
-top:0;
-right:-340px;
-width:320px;
-max-width:90%;
-height:100%;
-background:#FFF;
-padding:20px;
-overflow-y:auto;
-transition:right .35s ease;
-box-shadow:-10px 0 30px rgba(0,0,0,.20);
-z-index:9999;
-}
-
-.side-menu.open{
-right:0;
-}
-
-.menu-header{
-display:flex;
-justify-content:space-between;
-align-items:center;
-margin-bottom:20px;
-}
-
-.menu-header h2{
-margin:0;
-color:#D89A00;
-}
-
-#closeMenu{
-width:45px;
-height:45px;
-padding:0;
-border-radius:50%;
-font-size:22px;
-}
-
-.menu-content input,
-.menu-content button{
-margin-bottom:15px;
-}
-
-.dark{
-background:#121212;
-color:#EEE;
-}
-
-.dark .background{
-background:#121212;
-}
-
-.dark .card,
-.dark .stat-card{
-background:#252525;
-color:#FFF;
-}
-
-.dark input{
-background:#1E1E1E;
-color:#FFF;
-border:1px solid #444;
-}
-
-.dark .side-menu{
-background:#222;
-color:#FFF;
-}
-
-.dark .badge{
-background:#333;
-color:#FFD54F;
-}
-
-.dark .day{
-background:#2D2D2D;
-color:#FFF;
-}
-
-@media(max-width:480px){
-
-.container{
-padding:15px;
-}
-
-.sun-face{
-width:120px;
-height:120px;
-}
-
-.eye{
-top:40px;
-}
-
-.left{
-left:34px;
-}
-
-.right{
-right:34px;
-}
-
-#mouth{
-left:38px;
-bottom:28px;
-}
-
-.stat-card h3{
-font-size:26px;
-}
-
-button{
-font-size:17px;
-}
-
-}
-/* ==========================
-   Sun Mascot
-========================== */
-
-#sunCharacter{
-position:relative;
-display:flex;
-justify-content:center;
-align-items:center;
-flex-direction:column;
-margin-bottom:25px;
-}
-
-#sunMascot{
-animation:sunFloat 3s ease-in-out infinite;
-transition:.5s;
-}
-
-#speechBubble{
-background:white;
-padding:12px 18px;
-border-radius:18px;
-max-width:260px;
-text-align:center;
-font-weight:bold;
-box-shadow:0 10px 20px rgba(0,0,0,.15);
-margin-bottom:15px;
-opacity:0;
-transform:translateY(-20px);
-transition:.5s;
-}
-
-#speechBubble.show{
-opacity:1;
-transform:translateY(0);
-}
-
-@keyframes sunFloat{
-
-0%{transform:translateY(0);}
-50%{transform:translateY(-8px);}
-100%{transform:translateY(0);}
-
-}
-
-@keyframes sunTalk{
-
-0%{transform:scale(1);}
-50%{transform:scale(1.05);}
-100%{transform:scale(1);}
-
-}
-
-.talking{
-animation:sunTalk .35s infinite;
-}
-/* ==========================
-   دخول الشمس
-========================== */
-
-#sunMascot.enter{
-animation:sunEnter 1.2s ease forwards;
-}
-
-@keyframes sunEnter{
-
-0%{
-transform:translateY(-250px) scale(.4) rotate(-30deg);
-opacity:0;
-}
-
-60%{
-transform:translateY(20px) scale(1.08) rotate(10deg);
-opacity:1;
-}
-
-100%{
-transform:translateY(0) scale(1) rotate(0);
-opacity:1;
-}
-
-}
-function sunSpeak(text){
-
-bubble.innerHTML = text;
-
-bubble.classList.add("show");
-
-mascot.classList.add("talking");
-
-// تحريك العينين
-document.querySelector(".left").classList.add("look-left");
-document.querySelector(".right").classList.add("look-left");
-
-setTimeout(()=>{
-
-document.querySelector(".left").classList.remove("look-left");
-document.querySelector(".right").classList.remove("look-left");
-
-},900);
-
-// غمزة بعد شوية
-setTimeout(()=>{
-
-document.querySelector(".left").style.transform="scaleY(.1)";
-
-setTimeout(()=>{
-
-document.querySelector(".left").style.transform="scaleY(1)";
-
-},180);
-
-},2200);
-
-// إنهاء الكلام
-setTimeout(()=>{
-
-bubble.classList.remove("show");
-
-mascot.classList.remove("talking");
-
-},4500);
-
-}
-#sana{
-width:180px;
-max-width:80%;
-transition:0.4s;
-animation:sanaFloat 3s ease-in-out infinite;
-}
-
-#speechBubble{
-background:#fff;
-padding:12px 18px;
-border-radius:18px;
-box-shadow:0 10px 20px rgba(0,0,0,.15);
-margin-bottom:15px;
-font-weight:bold;
-text-align:center;
-max-width:260px;
-}
-
-@keyframes sanaFloat{
-
-0%{
-transform:translateY(0);
-}
-
-50%{
-transform:translateY(-10px);
-}
-
-100%{
-transform:translateY(0);
-}
-
-}
-/* ==========================
-   Dark Mode - Sana
-========================== */
-
-.dark #speechBubble{
-
-background:#2b2b2b;
-color:#ffffff;
-border:1px solid rgba(255,255,255,.15);
-
-}
-
-.dark #speechBubble h3{
-
-color:#FFD54F;
-
-}
-
-.dark #speechBubble p{
-
-color:#f5f5f5;
-
-}
-/* ==========================================
-   Dashboard
-========================================== */
-
-.dashboard{
-
-display:grid;
-
-grid-template-columns:repeat(2,1fr);
-
-gap:14px;
-
-margin-bottom:24px;
-
-}
-
-.stat-card{
-
-background:rgba(255,255,255,.88);
-
-backdrop-filter:blur(14px);
-
-border-radius:20px;
-
-padding:18px 15px;
-
-text-align:center;
-
-box-shadow:var(--shadow);
-
-transition:.25s;
-
-cursor:default;
-
-}
-
-.stat-card:hover{
-
-transform:translateY(-3px);
-
-}
-
-.stat-card .icon{
-
-font-size:28px;
-
-margin-bottom:8px;
-
-}
-
-.stat-card h3{
-
-font-size:30px;
-
-color:#D89A00;
-
-margin-bottom:5px;
-
-}
-
-.stat-card p{
-
-font-size:14px;
-
-color:var(--subtext);
-
-line-height:1.6;
-
-}
-
-/* ==========================================
-   Cards
-========================================== */
-
-.card{
-
-background:rgba(255,255,255,.9);
-
-backdrop-filter:blur(16px);
-
-border-radius:22px;
-
-padding:20px;
-
-margin-bottom:18px;
-
-box-shadow:var(--shadow);
-
-}
-
-.card h2{
-
-font-size:20px;
-
-margin-bottom:15px;
-
-color:var(--text);
-
-}
-
-/* ==========================================
-   Main Button
-========================================== */
-
-button{
-
-width:100%;
-
-padding:16px;
-
-border:none;
-
-border-radius:18px;
-
-background:var(--primary);
-
-font-size:18px;
-
-font-weight:700;
-
-cursor:pointer;
-
-transition:.25s;
-
-}
-
-button:hover{
-
-transform:translateY(-2px);
-
-}
-
-button:active{
-
-transform:scale(.98);
-
-}
-
-#message{
-
-margin-top:16px;
-
-text-align:center;
-
-font-weight:700;
-
-font-size:17px;
-
-line-height:1.8;
-
-color:var(--text);
-
-}
-
-/* ==========================================
-   Progress
-========================================== */
-
-.progress{
-
-width:100%;
-
-height:14px;
-
-background:#ECECEC;
-
-border-radius:999px;
-
-overflow:hidden;
-
-margin:16px 0;
-
-}
-
-#progressBar{
-
-height:100%;
-
-width:0;
-
-background:linear-gradient(
-
-90deg,
-
-#FFD54F,
-
-#FFB300
-
-);
-
-border-radius:999px;
-
-transition:.5s;
-
-}
-
-#progressText{
-
-text-align:center;
-
-font-weight:bold;
-
-font-size:17px;
-
-}
-
-/* ==========================================
-   Badges
-========================================== */
-
-#badges{
-
-display:flex;
-
-flex-wrap:wrap;
-
-gap:10px;
-   /* ==========================================
-   Side Menu
-========================================== */
-
-.menu-btn{
-
-position:fixed;
-
-top:18px;
-
-right:18px;
-
-width:52px;
-
-height:52px;
-
-border:none;
-
-border-radius:50%;
-
-background:var(--primary);
-
-font-size:25px;
-
-font-weight:bold;
-
-box-shadow:var(--shadow);
-
-z-index:1000;
-
-}
-
-#overlay{
-
-position:fixed;
-
-inset:0;
-
-background:rgba(0,0,0,.35);
-
-opacity:0;
-
-visibility:hidden;
-
-transition:.3s;
-
-z-index:998;
-
-}
-
-#overlay.show{
-
-opacity:1;
-
-visibility:visible;
-
-}
-
-.side-menu{
-
-position:fixed;
-
-top:0;
-
-right:-340px;
-
-width:320px;
-
-max-width:90%;
-
-height:100%;
-
-background:#ffffff;
-
-box-shadow:-10px 0 30px rgba(0,0,0,.15);
-
-padding:22px;
-
-transition:.35s;
-
-overflow-y:auto;
-
-z-index:999;
-
-}
-
-.side-menu.open{
-
-right:0;
-
-}
-
-.menu-header{
-
-display:flex;
-
-justify-content:space-between;
-
-align-items:center;
-
-margin-bottom:20px;
-
-}
-
-.menu-header h2{
-
-font-size:22px;
-
-color:#D89A00;
-
-}
-
-#closeMenu{
-
-width:45px;
-
-height:45px;
-
-padding:0;
-
-border-radius:50%;
-
-}
-
-.menu-content input{
-
-margin-bottom:14px;
-
-}
-
-.switch{
-
-display:flex;
-
-align-items:center;
-
-gap:10px;
-
-margin:14px 0;
-
-font-weight:bold;
-
-}
-
-/* ==========================================
-   Footer
-========================================== */
-
-footer{
-
-text-align:center;
-
-padding:30px 10px;
-
-color:#777;
-
-font-size:14px;
-
-line-height:1.9;
-
-}
-
-/* ==========================================
-   Dark Mode
-========================================== */
-
-.dark{
-
-background:#121212;
-
-color:#F5F5F5;
-
-}
-
-.dark .background{
-
-background:linear-gradient(
-
-180deg,
-
-#1a1a1a,
-
-#111111
-
-);
-
-}
-
-.dark .card,
-
-.dark .stat-card,
-
-.dark #speechBubble,
-
-.dark .side-menu{
-
-background:#242424;
-
-color:#F5F5F5;
-
-}
-
-.dark h1,
-
-.dark h2,
-
-.dark h3,
-
-.dark p,
-
-.dark #welcome,
-
-.dark #sunText,
-
-.dark #speechText,
-
-.dark #message{
-
-color:#F5F5F5;
-
-}
-
-.dark input{
-
-background:#333;
-
-color:#FFF;
-
-border:1px solid #555;
-
-}
-
-.dark .badge{
-
-background:#3b3b3b;
-
-color:#FFD54F;
-
-}
-
-.dark .day{
-
-background:#353535;
-
-color:#FFF;
-
-}
-
-.dark .day.done{
-
-background:#FFD54F;
-
-color:#222;
-
-}
-
-.dark button{
-
-color:#222;
-
-}
-
-/* ==========================================
-   Responsive
-========================================== */
-
-@media(max-width:480px){
-
-.container{
-
-padding:16px;
-
-}
-
-#sana{
-
-width:170px;
-
-}
-
-.dashboard{
-
-gap:12px;
-
-}
-
-.stat-card{
-
-padding:15px;
-
-}
-
-.stat-card h3{
-
-font-size:26px;
-
-}
-
-.card{
-
-padding:
 header{
 
 display:flex;
@@ -1531,6 +114,8 @@ font-size:24px;
 cursor:pointer;
 
 box-shadow:var(--shadow);
+
+}
 #sunCharacter{
 
 display:flex;
@@ -1578,6 +163,8 @@ max-width:280px;
 text-align:center;
 
 font-weight:700;
+
+}
 /* ==========================
 Dashboard
 ========================== */
@@ -1645,9 +232,7 @@ font-size:14px;
 color:var(--sub);
 
 }
-   }
-}
-   /* ==========================
+/* ==========================
 Cards
 ========================== */
 
@@ -1681,7 +266,57 @@ color:#333;
 
 text-align:center;
 
-}/* ==========================
+}
+/* ==========================
+زر الجرعة
+========================== */
+
+.doseButton{
+
+width:100%;
+
+height:60px;
+
+border:none;
+
+border-radius:18px;
+
+background:linear-gradient(135deg,#FFD54F,#FFCA28);
+
+font-size:20px;
+
+font-weight:800;
+
+cursor:pointer;
+
+transition:.25s;
+
+box-shadow:0 10px 25px rgba(255,193,7,.35);
+
+}
+
+.doseButton:hover{
+
+transform:translateY(-2px);
+
+}
+
+.doseButton:active{
+
+transform:scale(.97);
+
+}
+
+#message{
+
+margin-top:15px;
+
+font-size:16px;
+
+color:#666;
+
+}
+/* ==========================
 Progress
 ========================== */
 
@@ -1723,7 +358,8 @@ font-weight:700;
 
 font-size:18px;
 
-}/* ==========================
+}
+/* ==========================
 Calendar
 ========================== */
 
@@ -1771,7 +407,8 @@ background:#FFD54F;
 
 color:#222;
 
-}/* ==========================
+}
+/* ==========================
 Badges
 ========================== */
 
@@ -1806,6 +443,8 @@ transition:.3s;
 .badge:hover{
 
 transform:scale(1.05);
+
+}
 /* ==========================
 Speech Bubble
 ========================== */
@@ -1842,7 +481,8 @@ transition:.4s;
 
 min-height:55px;
 
-}/* ==========================
+}
+/* ==========================
 Intro Card
 ========================== */
 
@@ -1897,9 +537,7 @@ border-radius:14px;
 font-size:16px;
 
 }
-   
-}
-   /* ==========================
+/* ==========================
 Side Menu
 ========================== */
 
@@ -2006,6 +644,8 @@ gap:10px;
 margin:15px 0;
 
 font-weight:700;
+
+}
 /* ==========================
 Footer
 ========================== */
@@ -2031,9 +671,7 @@ color:#D89A00;
 margin-bottom:8px;
 
 }
-   
-}
-   /* ==========================
+/* ==========================
 Dark Mode
 ========================== */
 
@@ -2093,7 +731,7 @@ color:#FFD54F;
 color:#bbb;
 
 }
-   /* ==========================
+/* ==========================
 Responsive
 ========================== */
 
