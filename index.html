@@ -5,51 +5,31 @@
 
 <meta charset="UTF-8">
 
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>SunDose v9</title>
+<title>SunDose v10</title>
 
-<meta name="theme-color"
-content="#FFD54F">
+<meta name="theme-color" content="#FFD54F">
 
-<link rel="manifest"
-href="manifest.json">
+<link rel="manifest" href="manifest.json">
 
-<link rel="stylesheet"
-href="style.css">
+<link rel="stylesheet" href="style.css">
 
-<link rel="preconnect"
-href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
 
-<link rel="preconnect"
-href="https://fonts.gstatic.com"
-crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap"
-rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
 
 </head>
 
 <body>
 
-<!-- شاشة البداية -->
-
-<div id="splash">
-
-<div class="logo">☀️</div>
-
-<h1>SunDose</h1>
-
-<p>مع سنا... صحتك أسهل 💛</p>
-
-</div>
-
 <div class="background"></div>
 
 <div class="container">
 
-<header>
+<header class="topHeader">
 
 <button id="menuBtn" class="menuBtn">
 
@@ -57,7 +37,9 @@ rel="stylesheet">
 
 </button>
 
-<h1 class="appTitle">
+<div>
+
+<h1 class="logo">
 
 ☀️ SunDose
 
@@ -65,11 +47,40 @@ rel="stylesheet">
 
 <p id="welcome">
 
-أهلاً بك 💛
+أهلاً بك
 
 </p>
 
-</header>placeholder="اسم العلاج">
+</div>
+
+</header>
+<!-- ==========================
+القائمة الجانبية
+========================== -->
+
+<div id="overlay"></div>
+
+<aside id="sideMenu" class="sideMenu">
+
+<div class="menuHeader">
+
+<h2>⚙️ الإعدادات</h2>
+
+<button id="closeMenu">✕</button>
+
+</div>
+
+<div class="menuBody">
+
+<input
+id="nameInput"
+type="text"
+placeholder="اسمك">
+
+<input
+id="medicineInput"
+type="text"
+placeholder="اسم العلاج">
 
 <label class="switch">
 
@@ -77,11 +88,7 @@ rel="stylesheet">
 id="darkMode"
 type="checkbox">
 
-<span>
-
-🌙 الوضع الليلي
-
-</span>
+<span>🌙 الوضع الليلي</span>
 
 </label>
 
@@ -97,541 +104,6 @@ id="saveSettings">
 </aside>
 
 <!-- ==========================
-شخصية سنا
-========================== -->
-
-<section id="sunCharacter">
-
-<div
-id="speechBubble">
-
-<div
-id="speechText">
-
-...
-
-</div>
-
-</div>
-
-<div
-id="questionArea">
-
-<button
-id="maleBtn">
-
-👨 ولد
-
-</button>
-
-<button
-id="femaleBtn">
-
-👩 بنت
-
-</button>
-
-<input
-id="userNameInput"
-type="text"
-placeholder="اكتب اسمك">
-
-<input
-id="birthInput"
-type="date">
-
-<button
-id="nextQuestion">
-
-التالي
-
-</button>
-
-</div>
-
-<img
-id="sana"
-src="images/happy.png"
-alt="Sana">
-
-</section>
-
-<!-- ==========================
-الترحيب
-========================== -->
-
-<h2
-id="welcome">
-
-...
-
-</h2>
-<!-- ==========================
-Dashboard
-========================== -->
-
-<section
-class="dashboard">
-
-<div class="stat-card">
-
-<div class="icon">
-
-🔥
-
-</div>
-
-<h3
-id="streak">
-
-0
-
-</h3>
-
-<p>
-
-السلسلة الحالية
-
-</p>
-
-</div>
-
-<div class="stat-card">
-
-<div class="icon">
-
-🏆
-
-</div>
-
-<h3
-id="bestStreak">
-
-0
-
-</h3>
-
-<p>
-
-أفضل سلسلة
-
-</p>
-
-</div>
-
-<div class="stat-card">
-
-<div class="icon">
-
-💊
-
-</div>
-
-<h3
-id="totalDose">
-
-0
-
-</h3>
-
-<p>
-
-إجمالي الجرعات
-
-</p>
-
-</div>
-
-<div class="stat-card">
-
-<div class="icon">
-
-🎯
-
-</div>
-
-<h3
-id="goalPercent">
-
-0%
-
-</h3>
-
-<p>
-
-نسبة الالتزام
-
-</p>
-
-</div>
-
-</section>
-
-<!-- ==========================
-زر الجرعة
-========================== -->
-
-<section
-class="card">
-
-<button
-id="takeDose">
-
-💊 سجل جرعتي
-
-</button>
-
-<p
-id="message">
-
-أنا جاهزة أتابع يومك 💛
-
-</p>
-
-</section>
-
-<!-- ==========================
-Progress
-========================== -->
-
-<section
-class="card">
-
-<h2>
-
-📈 نسبة الالتزام
-
-</h2>
-
-<div
-class="progress">
-
-<div
-id="progressBar">
-
-</div>
-
-</div>
-
-<p
-id="progressText">
-
-0%
-
-</p>
-
-</section>
-<!-- ==========================
-Achievements
-========================== -->
-
-<section class="card">
-
-<h2>
-
-🏆 الإنجازات
-
-</h2>
-
-<div id="badges">
-
-</div>
-
-</section>
-
-<!-- ==========================
-Calendar
-========================== -->
-
-<section class="card">
-
-<h2>
-
-📅 تقويم الالتزام
-
-</h2>
-
-<div id="calendar">
-
-</div>
-
-</section>
-
-<!-- ==========================
-Daily Quote
-========================== -->
-
-<section class="card">
-
-<h2>
-
-💬 رسالة سنا اليوم
-
-</h2>
-
-<p id="quote">
-
-...
-
-</p>
-
-</section>
-
-<!-- ==========================
-Future Features
-========================== -->
-
-<section class="card future-card">
-
-<h2>
-
-🚀 قريبًا في SunDose
-
-</h2>
-
-<div class="future-list">
-
-<div class="future-item">
-
-💧 متابعة شرب المياه
-
-</div>
-
-<div class="future-item">
-
-😴 متابعة النوم
-
-</div>
-
-<div class="future-item">
-
-🏃 متابعة الجيم
-
-</div>
-
-<div class="future-item">
-
-❤️ الحالة الصحية
-
-</div>
-
-<div class="future-item">
-
-📊 تقارير وتحليلات
-
-</div>
-
-<div class="future-item">
-
-🤖 سنا AI
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ==========================
-Footer
-========================== -->
-
-<footer>
-
-<h3>
-
-☀️ SunDose
-
-</h3>
-
-<p>
-
-Designed by Waled Salah
-
-</p>
-
-<p>
-
-Powered by Sana AI
-
-</p>
-
-<p>
-
-Version 9 Alpha
-
-</p>
-
-</footer>
-
-</div>
-
-<!-- ==========================
-Scripts
-========================== -->
-
-<script src="script.js"></script>
-
-<script src="sana.js"></script>
-
-</body>
-
-</html>
-<header class="topHeader">
-
-<button
-id="menuBtn"
-class="menu-btn">
-
-☰
-
-</button>
-
-<div class="headerText">
-
-<h2 id="welcome">
-
-☀️ صباح الخير
-
-</h2>
-
-<p id="sunText">
-
-أنا جاهزة أبدأ يوم جديد معاك 💛
-
-</p>
-
-</div>
-
-</header>
-<section id="sunCharacter">
-
-<div id="speechBubble">
-
-<div id="speechText">
-
-...
-
-</div>
-
-</div>
-
-<img
-id="sana"
-src="images/happy.png"
-alt="Sana">
-
-    </section>
-    <section class="mainAction">
-
-<button
-id="takeDose">
-
-💊 سجل جرعتي
-
-</button>
-
-<p id="message">
-
-اضغط بعد تناول الجرعة
-
-</p>
-
-    </section>
-    <!-- ==========================
-Dashboard
-========================== -->
-
-<section class="dashboard">
-
-<div class="stat-card">
-
-<div class="icon">🔥</div>
-
-<h3 id="streak">0</h3>
-
-<p>السلسلة الحالية</p>
-
-</div>
-
-<div class="stat-card">
-
-<div class="icon">🏆</div>
-
-<h3 id="bestStreak">0</h3>
-
-<p>أفضل سلسلة</p>
-
-</div>
-
-<div class="stat-card">
-
-<div class="icon">💊</div>
-
-<h3 id="totalDose">0</h3>
-
-<p>إجمالي الجرعات</p>
-
-</div>
-
-<div class="stat-card">
-
-<div class="icon">🎯</div>
-
-<h3 id="goalPercent">0%</h3>
-
-<p>نسبة الالتزام</p>
-
-</div>
-
-</section>
-<section class="card">
-
-<h2>
-
-📈 نسبة الالتزام
-
-</h2>
-
-<div class="progress">
-
-<div id="progressBar"></div>
-
-</div>
-
-<p id="progressText">
-
-0%
-
-</p>
-
-</section>
-<section class="card">
-
-<h2>
-
-🏆 الإنجازات
-
-</h2>
-
-<div id="badges">
-
-</div>
-
-</section>
-<section class="card">
-
-<h2>
-
-📅 التقويم
-
-</h2>
-
-<div id="calendar">
-
-</div>
-
-</section>
-<!-- ==========================
 سنا
 ========================== -->
 
@@ -641,7 +113,7 @@ Dashboard
 
 <p id="speechText">
 
-...
+مرحبًا 👋
 
 </p>
 
@@ -653,42 +125,35 @@ src="images/happy.png"
 alt="Sana">
 
 </section>
-
 <!-- ==========================
-أسئلة البداية
+بطاقة البداية
 ========================== -->
 
-<section
-id="introCard"
-class="card">
+<section id="introCard" class="card">
 
 <h2>
 
-👋 قبل أن نبدأ
+🌞 أهلاً بك في SunDose
 
 </h2>
 
 <p>
 
-سنا تريد التعرف عليك أولاً
+قبل أن نبدأ أريد التعرف عليك
 
 </p>
 
-<div
-id="questionArea">
+<div id="questionArea">
 
-<div
-id="genderQuestion">
+<div id="genderQuestion">
 
-<button
-id="maleBtn">
+<button id="maleBtn">
 
 👨 ولد
 
 </button>
 
-<button
-id="femaleBtn">
+<button id="femaleBtn">
 
 👩 بنت
 
@@ -696,17 +161,14 @@ id="femaleBtn">
 
 </div>
 
-<div
-id="nameQuestion"
-style="display:none;">
+<div id="nameQuestion" style="display:none;">
 
 <input
 id="userNameInput"
 type="text"
 placeholder="اكتب اسمك">
 
-<button
-id="nextName">
+<button id="nextName">
 
 التالي
 
@@ -714,18 +176,15 @@ id="nextName">
 
 </div>
 
-<div
-id="ageQuestion"
-style="display:none;">
+<div id="birthQuestion" style="display:none;">
 
 <input
 id="birthInput"
 type="date">
 
-<button
-id="finishIntro">
+<button id="finishIntro">
 
-ابدأ رحلتي مع سنا 🌞
+ابدأ رحلتي مع سنا ☀️
 
 </button>
 
@@ -736,12 +195,33 @@ id="finishIntro">
 </section>
 
 <!-- ==========================
+زر الجرعة
+========================== -->
+
+<section class="card mainCard">
+
+<button
+id="takeDose"
+class="doseButton">
+
+💊 سجل جرعتي
+
+</button>
+
+<p id="message">
+
+أنا جاهزة أتابع يومك 💛
+
+</p>
+
+</section>
+<!-- ==========================
 الإحصائيات
 ========================== -->
 
 <section class="dashboard">
 
-<div class="stat-card">
+<div class="statCard">
 
 <div class="icon">🔥</div>
 
@@ -751,7 +231,7 @@ id="finishIntro">
 
 </div>
 
-<div class="stat-card">
+<div class="statCard">
 
 <div class="icon">🏆</div>
 
@@ -761,7 +241,7 @@ id="finishIntro">
 
 </div>
 
-<div class="stat-card">
+<div class="statCard">
 
 <div class="icon">💊</div>
 
@@ -771,7 +251,7 @@ id="finishIntro">
 
 </div>
 
-<div class="stat-card">
+<div class="statCard">
 
 <div class="icon">🎯</div>
 
@@ -782,28 +262,9 @@ id="finishIntro">
 </div>
 
 </section>
-<!-- ==========================
-زر الجرعة
-========================== -->
-
-<section class="card main-card">
-
-<button id="takeDose" class="doseButton">
-
-💊 سجل جرعتي
-
-</button>
-
-<p id="message">
-
-جاهزة أتابع يومك 💛
-
-</p>
-
-</section>
 
 <!-- ==========================
-نسبة الالتزام
+شريط التقدم
 ========================== -->
 
 <section class="card">
@@ -827,7 +288,6 @@ id="finishIntro">
 </p>
 
 </section>
-
 <!-- ==========================
 الإنجازات
 ========================== -->
@@ -865,7 +325,7 @@ id="finishIntro">
 </section>
 
 <!-- ==========================
-رسالة اليوم
+رسالة سنا اليومية
 ========================== -->
 
 <section class="card">
@@ -878,68 +338,41 @@ id="finishIntro">
 
 <p id="quote">
 
-...
+كل يوم تلتزم فيه هو خطوة لصحة أفضل 💛
 
 </p>
 
 </section>
+
 <!-- ==========================
-القائمة الجانبية
+المميزات القادمة
 ========================== -->
 
-<div id="overlay"></div>
+<section class="card">
 
-<aside id="sideMenu" class="side-menu">
+<h2>
 
-<div class="menu-header">
+🚀 قريبًا
 
-<h2>⚙️ الإعدادات</h2>
+</h2>
 
-<button id="closeMenu">
+<div class="futureList">
 
-✕
+<div class="futureItem">💧 متابعة شرب المياه</div>
 
-</button>
+<div class="futureItem">😴 متابعة النوم</div>
 
-</div>
+<div class="futureItem">🏃 متابعة الجيم</div>
 
-<div class="menu-content">
+<div class="futureItem">❤️ متابعة الصحة</div>
 
-<input
-id="nameInput"
-type="text"
-placeholder="اسم المستخدم">
+<div class="futureItem">📊 تقارير ذكية</div>
 
-<input
-id="medicineInput"
-type="text"
-placeholder="اسم العلاج">
-
-<label class="switch">
-
-<input
-id="darkMode"
-type="checkbox">
-
-<span>
-
-🌙 الوضع الليلي
-
-</span>
-
-</label>
-
-<button
-id="saveSettings">
-
-💾 حفظ الإعدادات
-
-</button>
+<div class="futureItem">🤖 Sana AI</div>
 
 </div>
 
-</aside>
-
+</section>
 <!-- ==========================
 Footer
 ========================== -->
@@ -966,7 +399,7 @@ Powered by Sana AI
 
 <p>
 
-Version 9
+Version 10
 
 </p>
 
