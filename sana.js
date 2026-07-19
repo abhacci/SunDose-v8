@@ -204,3 +204,68 @@ await sanaTalk("☀️ صباح الخير");
 }
 
 },600000);
+/* ==========================================
+   Intro Wizard
+========================================== */
+
+const introCard=document.getElementById("introCard");
+
+const genderQuestion=document.getElementById("genderQuestion");
+const nameQuestion=document.getElementById("nameQuestion");
+const birthQuestion=document.getElementById("birthQuestion");
+const medicineQuestion=document.getElementById("medicineQuestion");
+
+const maleBtn=document.getElementById("maleBtn");
+const femaleBtn=document.getElementById("femaleBtn");
+
+const nextName=document.getElementById("nextName");
+const nextBirth=document.getElementById("nextBirth");
+const finishIntro=document.getElementById("finishIntro");
+
+const userNameInput=document.getElementById("userNameInput");
+const birthInput=document.getElementById("birthInput");
+const medicineName=document.getElementById("medicineName");
+maleBtn.onclick=function(){
+
+localStorage.setItem("gender","male");
+
+genderQuestion.style.display="none";
+
+nameQuestion.style.display="block";
+
+sanaTalk("💛 تشرفت بيك");
+
+};
+
+femaleBtn.onclick=function(){
+
+localStorage.setItem("gender","female");
+
+genderQuestion.style.display="none";
+
+nameQuestion.style.display="block";
+
+sanaTalk("💛 تشرفت بيكي");
+
+};
+nextName.onclick=function(){
+
+if(userNameInput.value.trim()==""){
+
+alert("اكتب اسمك");
+
+return;
+
+}
+
+localStorage.setItem(
+"userName",
+userNameInput.value.trim()
+);
+
+nameQuestion.style.display="none";
+
+birthQuestion.style.display="block";
+
+sanaTalk("🎂 جميل جداً");
+};
