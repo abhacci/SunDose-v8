@@ -396,3 +396,49 @@ console.log(err);
 });
 
 }
+/* ==========================================
+   Intro
+========================================== */
+
+const introCard = document.getElementById("introCard");
+
+const mainCard = document.querySelector(".mainCard");
+const dashboard = document.querySelector(".dashboard");
+
+const progressCard = document.getElementById("progressCard");
+const badgesCard = document.getElementById("badgesCard");
+const calendarCard = document.getElementById("calendarCard");
+const quoteCard = document.getElementById("quoteCard");
+const futureCard = document.getElementById("futureCard");
+
+const finishIntro = document.getElementById("finishIntro");
+
+finishIntro.onclick = function () {
+
+memory.name = document.getElementById("userNameInput").value.trim();
+
+memory.medicine = document.getElementById("medicineName").value.trim();
+
+saveMemory();
+
+localStorage.setItem("firstVisit","true");
+
+introCard.style.display="none";
+
+mainCard.style.display="block";
+
+dashboard.style.display="grid";
+
+progressCard.style.display="block";
+
+badgesCard.style.display="block";
+
+calendarCard.style.display="block";
+
+quoteCard.style.display="block";
+
+futureCard.style.display="block";
+
+welcome.innerHTML="☀️ أهلاً " + memory.name;
+
+};
