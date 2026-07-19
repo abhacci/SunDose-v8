@@ -96,34 +96,44 @@ placeholder="اسم العلاج">
 
 <div id="sunCharacter">
 
-    <div id="speechBubble" class="show">
+<div id="speechBubble" class="speechBubble">
 
-        <h3>🌞 أهلاً... أنا سنا</h3>
+    <div id="speechText"></div>
 
-        <p>
-        يسعدني جدًا إنك هنا.
-        </p>
+    <div id="questionArea" style="display:none;">
 
-        <p>
-        اسمي "سنا"، ومعناه الضوء والإشراق.
-        اخترت هذا الاسم لأن هدفي أضيف نور صغير ليومك، خطوة بعد خطوة.
-        </p>
+        <button id="maleBtn" class="choiceBtn">
+            👨 أنا ولد
+        </button>
 
-        <p>
-        أنا مش مجرد شخصية داخل التطبيق...
-        أنا رفيقتك اليومية، وهساعدك تهتم بالشمس، والمياه، والنوم، والعادات الصحية.
-        </p>
+        <button id="femaleBtn" class="choiceBtn">
+            👩 أنا بنت
+        </button>
 
-        <p>
-        ولو نسيت يوم، مش هزعل منك.
-        هنبدأ من جديد سوا.
-        </p>
+        <input
+            id="userNameInput"
+            type="text"
+            placeholder="اكتب اسمك"
+            style="display:none;"
+        >
 
-        <button id="startJourney">
-            🌞 ابدأ رحلتي مع سنا
+        <input
+            id="birthInput"
+            type="date"
+            style="display:none;"
+        >
+
+        <button
+            id="nextQuestion"
+            class="choiceBtn"
+            style="display:none;"
+        >
+            متابعة
         </button>
 
     </div>
+
+</div>
 
     <img
         id="sana"
@@ -137,7 +147,7 @@ placeholder="اسم العلاج">
 </div>
 <h1>SunDose</h1>
 
-<p id="welcome">صباح الخير يا ملك 💛</p>
+<p <p id="welcome"></p>
 
 <p id="sunText">أنا جاهزة أتابع جرعتك النهارده ☀️</p>
 
