@@ -1,6 +1,7 @@
-/* ===================================
-   SunDose v9
-=================================== */
+/* ==========================================
+   SunDose v10
+   Design by Waled  
+========================================== */
 
 *{
 margin:0;
@@ -12,25 +13,25 @@ font-family:'Cairo',sans-serif;
 :root{
 
 --primary:#FFD54F;
---primaryDark:#F4B400;
+--primary2:#FFB300;
 
---bg1:#FFFDF5;
---bg2:#EEF8FF;
+--background:#FFFDF6;
+--background2:#EEF8FF;
 
---card:#FFFFFFCC;
+--card:rgba(255,255,255,.82);
 
---text:#252525;
+--text:#222;
 --sub:#6B7280;
 
---shadow:0 12px 35px rgba(0,0,0,.08);
-
 --radius:24px;
+
+--shadow:0 12px 35px rgba(0,0,0,.10);
 
 }
 
 body{
 
-background:linear-gradient(180deg,var(--bg1),var(--bg2));
+background:linear-gradient(180deg,var(--background),var(--background2));
 
 color:var(--text);
 
@@ -48,11 +49,11 @@ inset:0;
 
 background:
 
-radial-gradient(circle at top,#FFE08255 0%,transparent 45%),
+radial-gradient(circle at top,#FFE08266 0%,transparent 45%),
 
-linear-gradient(180deg,#FFFDF5,#EEF8FF);
+linear-gradient(180deg,#FFFDF6,#EEF8FF);
 
-z-index:-2;
+z-index:-1;
 
 }
 
@@ -65,21 +66,21 @@ margin:auto;
 padding:18px;
 
 }
-header{
+.topHeader{
 
 display:flex;
 
-align-items:center;
-
 justify-content:space-between;
 
-margin-bottom:20px;
+align-items:center;
+
+margin-bottom:30px;
 
 }
 
-.appTitle{
+.logo{
 
-font-size:30px;
+font-size:32px;
 
 font-weight:800;
 
@@ -89,11 +90,11 @@ color:#D89A00;
 
 #welcome{
 
-font-size:22px;
+margin-top:6px;
+
+font-size:18px;
 
 font-weight:700;
-
-margin-top:6px;
 
 }
 
@@ -107,7 +108,7 @@ border:none;
 
 border-radius:50%;
 
-background:#FFD54F;
+background:linear-gradient(135deg,#FFD54F,#FFCA28);
 
 font-size:24px;
 
@@ -115,7 +116,19 @@ cursor:pointer;
 
 box-shadow:var(--shadow);
 
+transition:.3s;
+
 }
+
+.menuBtn:hover{
+
+transform:scale(1.05);
+
+}
+/* ==========================================
+   Sana
+========================================== */
+
 #sunCharacter{
 
 display:flex;
@@ -124,15 +137,17 @@ flex-direction:column;
 
 align-items:center;
 
-margin:30px 0;
+margin:25px 0;
 
 }
 
 #sana{
 
-width:190px;
+width:180px;
 
 animation:float 3s ease-in-out infinite;
+
+user-select:none;
 
 }
 
@@ -148,101 +163,41 @@ animation:float 3s ease-in-out infinite;
 
 #speechBubble{
 
-background:white;
+background:#fff;
 
-padding:14px 18px;
-
-border-radius:20px;
-
-box-shadow:var(--shadow);
-
-margin-bottom:15px;
-
-max-width:280px;
-
-text-align:center;
-
-font-weight:700;
-
-}
-/* ==========================
-Dashboard
-========================== */
-
-.dashboard{
-
-display:grid;
-
-grid-template-columns:repeat(2,1fr);
-
-gap:16px;
-
-margin-bottom:22px;
-
-}
-
-.stat-card{
-
-background:rgba(255,255,255,.75);
-
-backdrop-filter:blur(18px);
+padding:16px 20px;
 
 border-radius:22px;
 
-padding:18px;
+box-shadow:var(--shadow);
+
+margin-bottom:18px;
+
+max-width:300px;
 
 text-align:center;
 
-box-shadow:var(--shadow);
+font-size:16px;
 
-transition:.3s;
+font-weight:700;
 
-}
-
-.stat-card:hover{
-
-transform:translateY(-4px);
+line-height:1.8;
 
 }
 
-.stat-card .icon{
+#speechText{
 
-font-size:28px;
-
-margin-bottom:10px;
+min-height:40px;
 
 }
-
-.stat-card h3{
-
-font-size:30px;
-
-font-weight:800;
-
-color:#D89A00;
-
-margin-bottom:6px;
-
-}
-
-.stat-card p{
-
-font-size:14px;
-
-color:var(--sub);
-
-}
-/* ==========================
-Cards
-========================== */
 
 .card{
 
-background:rgba(255,255,255,.82);
+background:var(--card);
 
 backdrop-filter:blur(20px);
 
-border-radius:24px;
+border-radius:var(--radius);
 
 padding:22px;
 
@@ -254,22 +209,18 @@ box-shadow:var(--shadow);
 
 .card h2{
 
-font-size:20px;
-
 margin-bottom:16px;
 
-color:#333;
+font-size:20px;
+
+font-weight:800;
 
 }
-
-.main-card{
+.mainCard{
 
 text-align:center;
 
 }
-/* ==========================
-زر الجرعة
-========================== */
 
 .doseButton{
 
@@ -281,7 +232,7 @@ border:none;
 
 border-radius:18px;
 
-background:linear-gradient(135deg,#FFD54F,#FFCA28);
+background:linear-gradient(135deg,#FFD54F,#FFB300);
 
 font-size:20px;
 
@@ -297,13 +248,7 @@ box-shadow:0 10px 25px rgba(255,193,7,.35);
 
 .doseButton:hover{
 
-transform:translateY(-2px);
-
-}
-
-.doseButton:active{
-
-transform:scale(.97);
+transform:translateY(-3px);
 
 }
 
@@ -313,12 +258,66 @@ margin-top:15px;
 
 font-size:16px;
 
-color:#666;
+color:var(--sub);
 
 }
-/* ==========================
-Progress
-========================== */
+
+.dashboard{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:16px;
+
+margin-bottom:20px;
+
+}
+
+.statCard{
+
+background:rgba(255,255,255,.75);
+
+backdrop-filter:blur(16px);
+
+border-radius:20px;
+
+padding:18px;
+
+text-align:center;
+
+box-shadow:var(--shadow);
+
+transition:.3s;
+
+}
+
+.statCard:hover{
+
+transform:translateY(-4px);
+
+}
+
+.icon{
+
+font-size:30px;
+
+margin-bottom:10px;
+
+}
+
+.statCard h3{
+
+font-size:28px;
+
+color:#D89A00;
+
+margin-bottom:6px;
+
+}
+/* ==========================================
+   Progress
+========================================== */
 
 .progress{
 
@@ -338,15 +337,15 @@ margin:15px 0;
 
 #progressBar{
 
-height:100%;
-
 width:0%;
+
+height:100%;
 
 background:linear-gradient(90deg,#FFD54F,#FFB300);
 
 border-radius:999px;
 
-transition:.4s;
+transition:.5s;
 
 }
 
@@ -359,9 +358,10 @@ font-weight:700;
 font-size:18px;
 
 }
-/* ==========================
-Calendar
-========================== */
+
+/* ==========================================
+   Calendar
+========================================== */
 
 #calendar{
 
@@ -379,13 +379,13 @@ margin-top:15px;
 
 height:46px;
 
-border-radius:14px;
-
 display:flex;
 
 align-items:center;
 
 justify-content:center;
+
+border-radius:14px;
 
 background:#F5F5F5;
 
@@ -408,9 +408,10 @@ background:#FFD54F;
 color:#222;
 
 }
-/* ==========================
-Badges
-========================== */
+
+/* ==========================================
+   Badges
+========================================== */
 
 #badges{
 
@@ -424,11 +425,11 @@ gap:10px;
 
 .badge{
 
-padding:10px 16px;
+padding:10px 14px;
+
+background:#FFF7D6;
 
 border-radius:999px;
-
-background:#FFF6CF;
 
 font-size:14px;
 
@@ -445,101 +446,9 @@ transition:.3s;
 transform:scale(1.05);
 
 }
-/* ==========================
-Speech Bubble
-========================== */
-
-#speechBubble{
-
-background:#ffffff;
-
-padding:16px;
-
-border-radius:22px;
-
-box-shadow:0 10px 30px rgba(0,0,0,.10);
-
-margin-bottom:18px;
-
-max-width:290px;
-
-text-align:center;
-
-line-height:1.8;
-
-font-size:16px;
-
-font-weight:700;
-
-color:#444;
-
-transition:.4s;
-
-}
-
-#speechText{
-
-min-height:55px;
-
-}
-/* ==========================
-Intro Card
-========================== */
-
-#introCard{
-
-text-align:center;
-
-}
-
-#questionArea{
-
-display:flex;
-
-flex-direction:column;
-
-gap:14px;
-
-margin-top:18px;
-
-}
-
-#questionArea button{
-
-width:100%;
-
-height:52px;
-
-border:none;
-
-border-radius:16px;
-
-background:#FFD54F;
-
-font-size:17px;
-
-font-weight:700;
-
-cursor:pointer;
-
-}
-
-#questionArea input{
-
-width:100%;
-
-padding:14px;
-
-border:1px solid #DDD;
-
-border-radius:14px;
-
-font-size:16px;
-
-}
-/* ==========================
-Side Menu
-========================== */
+/* ==========================================
+   Side Menu
+========================================== */
 
 #overlay{
 
@@ -555,7 +464,7 @@ visibility:hidden;
 
 transition:.3s;
 
-z-index:90;
+z-index:99;
 
 }
 
@@ -567,7 +476,7 @@ visibility:visible;
 
 }
 
-.side-menu{
+.sideMenu{
 
 position:fixed;
 
@@ -581,27 +490,27 @@ max-width:90%;
 
 height:100%;
 
-background:#fff;
+background:#FFF;
 
 padding:22px;
 
-overflow-y:auto;
-
 transition:.35s;
 
-box-shadow:-10px 0 30px rgba(0,0,0,.15);
+box-shadow:-8px 0 25px rgba(0,0,0,.15);
 
 z-index:100;
 
+overflow-y:auto;
+
 }
 
-.side-menu.open{
+.sideMenu.open{
 
 right:0;
 
 }
 
-.menu-header{
+.menuHeader{
 
 display:flex;
 
@@ -609,27 +518,23 @@ justify-content:space-between;
 
 align-items:center;
 
-margin-bottom:25px;
+margin-bottom:20px;
 
 }
 
-.menu-header h2{
-
-color:#D89A00;
-
-}
-
-.menu-content input{
+.menuBody input{
 
 width:100%;
 
 padding:14px;
 
-margin-bottom:15px;
+margin-bottom:14px;
+
+border:1px solid #DDD;
 
 border-radius:14px;
 
-border:1px solid #DDD;
+font-size:16px;
 
 }
 
@@ -641,20 +546,41 @@ align-items:center;
 
 gap:10px;
 
-margin:15px 0;
+margin:16px 0;
 
 font-weight:700;
 
 }
-/* ==========================
-Footer
-========================== */
+
+#saveSettings{
+
+width:100%;
+
+height:50px;
+
+border:none;
+
+border-radius:14px;
+
+background:#FFD54F;
+
+font-size:17px;
+
+font-weight:700;
+
+cursor:pointer;
+
+}
+
+/* ==========================================
+   Footer
+========================================== */
 
 footer{
 
-margin:35px 0 20px;
-
 text-align:center;
+
+padding:25px 10px;
 
 color:#777;
 
@@ -664,76 +590,62 @@ line-height:2;
 
 footer h3{
 
-font-size:24px;
-
 color:#D89A00;
 
 margin-bottom:8px;
 
 }
-/* ==========================
-Dark Mode
-========================== */
 
-.dark{
+/* ==========================================
+   Dark Mode
+========================================== */
 
-background:#121212;
-
-color:#fff;
-
-}
-
-.dark .background{
+body.dark{
 
 background:#121212;
 
+color:#FFF;
+
 }
 
-.dark .card,
-.dark .stat-card,
-.dark #speechBubble,
-.dark .side-menu{
+body.dark .background{
+
+background:#121212;
+
+}
+
+body.dark .card,
+body.dark .statCard,
+body.dark .sideMenu,
+body.dark #speechBubble{
 
 background:#222;
 
-color:#fff;
+color:#FFF;
 
 }
 
-.dark input{
+body.dark input{
 
 background:#333;
 
-border:1px solid #444;
+color:#FFF;
 
-color:#fff;
+border-color:#444;
 
 }
 
-.dark .day{
+body.dark .day{
 
 background:#333;
 
-color:#fff;
+color:#FFF;
 
 }
 
-.dark .badge{
-
-background:#3a3a3a;
-
-color:#FFD54F;
-
-}
-
-.dark footer{
-
-color:#bbb;
-
-}
-/* ==========================
-Responsive
-========================== */
+/* ==========================================
+   Responsive
+========================================== */
 
 @media(max-width:480px){
 
@@ -743,37 +655,15 @@ padding:15px;
 
 }
 
-.dashboard{
-
-grid-template-columns:1fr 1fr;
-
-gap:12px;
-
-}
-
-.stat-card{
-
-padding:15px;
-
-}
-
 #sana{
 
-width:170px;
+width:160px;
 
 }
 
-.card{
+.dashboard{
 
-padding:18px;
-
-}
-
-.doseButton{
-
-height:56px;
-
-font-size:18px;
+gap:12px;
 
 }
 
