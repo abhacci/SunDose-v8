@@ -2,21 +2,17 @@
 <html lang="ar" dir="rtl">
 
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>SunDose v10</title>
+<title>SunDose 1.0</title>
 
 <meta name="theme-color" content="#FFD54F">
 
 <link rel="manifest" href="manifest.json">
-
 <link rel="stylesheet" href="style.css">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -31,27 +27,13 @@
 
 <header class="topHeader">
 
-<button id="menuBtn" class="menuBtn">
-
-☰
-
-</button>
-
-<div>
-
 <h1 class="logo">
-
 ☀️ SunDose
-
 </h1>
 
-<p id="welcome">
-
-أهلاً بك
-
-</p>
-
-</div>
+<button id="menuBtn" class="menuBtn">
+☰
+</button>
 
 </header>
 <!-- ==========================
@@ -62,44 +44,43 @@
 
 <aside id="sideMenu" class="sideMenu">
 
-<div class="menuHeader">
+    <div class="menuHeader">
 
-<h2>⚙️ الإعدادات</h2>
+        <h2>⚙️ الإعدادات</h2>
 
-<button id="closeMenu">✕</button>
+        <button id="closeMenu">✕</button>
 
-</div>
+    </div>
 
-<div class="menuBody">
+    <div class="menuBody">
 
-<input
-id="nameInput"
-type="text"
-placeholder="اسمك">
+        <input
+            id="nameInput"
+            type="text"
+            placeholder="اسمك">
 
-<input
-id="medicineInput"
-type="text"
-placeholder="اسم العلاج">
+        <input
+            id="medicineInput"
+            type="text"
+            placeholder="اسم العلاج">
 
-<label class="switch">
+        <label class="switch">
 
-<input
-id="darkMode"
-type="checkbox">
+            <input
+                id="darkMode"
+                type="checkbox">
 
-<span>🌙 الوضع الليلي</span>
+            <span>🌙 الوضع الليلي</span>
 
-</label>
+        </label>
 
-<button
-id="saveSettings">
+        <button id="saveSettings">
 
-💾 حفظ الإعدادات
+            💾 حفظ الإعدادات
 
-</button>
+        </button>
 
-</div>
+    </div>
 
 </aside>
 
@@ -107,196 +88,149 @@ id="saveSettings">
 سنا
 ========================== -->
 
-<section id="sunCharacter">
+<section id="character">
 
-<div id="speechBubble">
+    <div id="speechBubble">
 
-<p id="speechText">
+        <p id="speechText">
 
-مرحبًا 👋
+            أهلاً 👋
 
-</p>
+        </p>
 
-</div>
+    </div>
 
-<img
-id="sana"
-src="images/happy.png"
-alt="Sana">
+    <img
+        id="sana"
+        src="images/happy.png"
+        alt="Sana">
 
 </section>
+
 <!-- ==========================
-بطاقة البداية
+شاشة التعارف
 ========================== -->
 
-<section id="introCard" class="card">
+<section id="intro">
 
-<h2>🌞 أهلاً بك</h2>
+    <h2>🌞 أهلاً بك</h2>
 
-<p id="introMessage">
+    <p>
 
-أنا سنا وسأساعدك في رحلتك الصحية 💛
+        أنا سنا وسأساعدك في رحلتك الصحية 💛
 
-</p>
+    </p>
 
-<div id="questionArea">
+    <div id="questionArea">
 
-<div id="genderQuestion">
+        <button id="maleBtn">
 
-<button id="maleBtn" class="introBtn">
+            👨 ولد
 
-👨 ولد
+        </button>
 
-</button>
+        <button id="femaleBtn">
 
-<button id="femaleBtn" class="introBtn">
+            👩 بنت
 
-👩 بنت
+        </button>
 
-</button>
-
-</div>
-
-<div id="nameQuestion" style="display:none;">
-
-<input
-id="userNameInput"
-type="text"
-placeholder="اكتب اسمك">
-
-<button id="nextName">
-
-التالي
-
-</button>
-
-</div>
-
-<div id="birthQuestion" style="display:none;">
-
-<input
-id="birthInput"
-type="date">
-
-<button id="nextBirth">
-
-التالي
-
-</button>
-
-</div>
-
-<div id="medicineQuestion" style="display:none;">
-
-<input
-id="medicineName"
-type="text"
-placeholder="اسم العلاج">
-
-<button id="finishIntro">
-
-ابدأ رحلتي مع سنا ☀️
-
-</button>
-
-</div>
-
-</div>
+    </div>
 
 </section>
 
 <!-- ==========================
+بداية التطبيق
+========================== -->
+
+<main id="app" hidden>
+  <!-- ==========================
 زر الجرعة
 ========================== -->
 
-<section class="card mainCard" style="display:none;">
+<section class="card mainCard">
 
-<button
-id="takeDose"
-class="doseButton">
+    <button id="takeDose" class="doseButton">
 
-💊 سجل جرعتي
+        💊 سجل جرعتي
 
-</button>
+    </button>
 
-<p id="message">
+    <p id="message">
 
-أنا جاهزة أتابع يومك 💛
+        أنا جاهزة أتابع يومك 💛
 
-</p>
+    </p>
 
 </section>
+
 <!-- ==========================
 الإحصائيات
 ========================== -->
 
-<section class="dashboard" style="display:none;">
+<section class="dashboard">
 
-<div class="statCard">
+    <div class="statCard">
 
-<div class="icon">🔥</div>
+        <div class="icon">🔥</div>
 
-<h3 id="streak">0</h3>
+        <h3 id="streak">0</h3>
 
-<p>السلسلة الحالية</p>
+        <p>السلسلة الحالية</p>
 
-</div>
+    </div>
 
-<div class="statCard">
+    <div class="statCard">
 
-<div class="icon">🏆</div>
+        <div class="icon">🏆</div>
 
-<h3 id="bestStreak">0</h3>
+        <h3 id="bestStreak">0</h3>
 
-<p>أفضل سلسلة</p>
+        <p>أفضل سلسلة</p>
 
-</div>
+    </div>
 
-<div class="statCard">
+    <div class="statCard">
 
-<div class="icon">💊</div>
+        <div class="icon">💊</div>
 
-<h3 id="totalDose">0</h3>
+        <h3 id="totalDose">0</h3>
 
-<p>إجمالي الجرعات</p>
+        <p>إجمالي الجرعات</p>
 
-</div>
+    </div>
 
-<div class="statCard">
+    <div class="statCard">
 
-<div class="icon">🎯</div>
+        <div class="icon">🎯</div>
 
-<h3 id="goalPercent">0%</h3>
+        <h3 id="goalPercent">0%</h3>
 
-<p>نسبة الالتزام</p>
+        <p>نسبة الالتزام</p>
 
-</div>
+    </div>
 
 </section>
 
 <!-- ==========================
-شريط التقدم
+نسبة الالتزام
 ========================== -->
 
-<section class="card" id="progressCard" style="display:none;">
+<section class="card">
 
-<h2>
+    <h2>📈 نسبة الالتزام</h2>
 
-📈 نسبة الالتزام
+    <div class="progress">
 
-</h2>
+        <div id="progressBar"></div>
 
-<div class="progress">
+    </div>
 
-<div id="progressBar"></div>
+    <p id="progressText">
 
-</div>
+        0%
 
-<p id="progressText">
-
-0%
-
-</p>
+    </p>
 
 </section>
 <!-- ==========================
@@ -305,15 +239,9 @@ class="doseButton">
 
 <section class="card">
 
-<h2>
+    <h2>🏆 الإنجازات</h2>
 
-🏆 الإنجازات
-
-</h2>
-
-<div id="badges">
-
-</div>
+    <div id="badges"></div>
 
 </section>
 
@@ -321,36 +249,27 @@ class="doseButton">
 التقويم
 ========================== -->
 
-<section class="card" id="calendarCard" style="display:none;">
-<h2>
+<section class="card">
 
-📅 تقويم الالتزام
+    <h2>📅 تقويم الالتزام</h2>
 
-</h2>
-
-<div id="calendar">
-
-</div>
+    <div id="calendar"></div>
 
 </section>
 
 <!-- ==========================
-رسالة سنا اليومية
+رسالة سنا
 ========================== -->
 
-<section class="card" id="quoteCard" style="display:none;">
+<section class="card">
 
-<h2>
+    <h2>💬 رسالة سنا</h2>
 
-💬 رسالة سنا
+    <p id="quote">
 
-</h2>
+        كل يوم تلتزم فيه هو خطوة لصحة أفضل 💛
 
-<p id="quote">
-
-كل يوم تلتزم فيه هو خطوة لصحة أفضل 💛
-
-</p>
+    </p>
 
 </section>
 
@@ -358,69 +277,50 @@ class="doseButton">
 المميزات القادمة
 ========================== -->
 
-<section class="card" id="futureCard" style="display:none;">
+<section class="card">
 
-<h2>
+    <h2>🚀 قريبًا</h2>
 
-🚀 قريبًا
+    <div class="futureList">
 
-</h2>
+        <div class="futureItem">💧 متابعة شرب المياه</div>
 
-<div class="futureList">
+        <div class="futureItem">😴 متابعة النوم</div>
 
-<div class="futureItem">💧 متابعة شرب المياه</div>
+        <div class="futureItem">🏃 متابعة الجيم</div>
 
-<div class="futureItem">😴 متابعة النوم</div>
+        <div class="futureItem">❤️ متابعة الصحة</div>
 
-<div class="futureItem">🏃 متابعة الجيم</div>
+        <div class="futureItem">📊 تقارير ذكية</div>
 
-<div class="futureItem">❤️ متابعة الصحة</div>
+        <div class="futureItem">🤖 Sana AI</div>
 
-<div class="futureItem">📊 تقارير ذكية</div>
-
-<div class="futureItem">🤖 Sana AI</div>
-
-</div>
+    </div>
 
 </section>
+
+</main>
+
 <!-- ==========================
 Footer
 ========================== -->
 
 <footer>
 
-<h3>
+    <h3>☀️ SunDose</h3>
 
-☀️ SunDose
+    <p>Designed by Waled Salah</p>
 
-</h3>
+    <p>Powered by Sana AI</p>
 
-<p>
-
-Designed by Waled Salah
-
-</p>
-
-<p>
-
-Powered by Sana AI
-
-</p>
-
-<p>
-
-Version 10
-
-</p>
+    <p>Version 1.0</p>
 
 </footer>
 
 </div>
 
 <script src="script.js"></script>
-
 <script src="sana.js"></script>
 
 </body>
-
 </html>
