@@ -1,7 +1,6 @@
-/* ==========================================
-   SunDose v10
-   Design by Waled  
-========================================== */
+/* ===================================
+   SunDose 1.0
+=================================== */
 
 *{
 margin:0;
@@ -13,25 +12,26 @@ font-family:'Cairo',sans-serif;
 :root{
 
 --primary:#FFD54F;
---primary2:#FFB300;
+--primaryDark:#F4B400;
 
---background:#FFFDF6;
---background2:#EEF8FF;
+--bg1:#FFFDF5;
+--bg2:#EEF8FF;
 
---card:rgba(255,255,255,.82);
+--card:#ffffffdd;
 
---text:#222;
---sub:#6B7280;
+--text:#2C2C2C;
 
---radius:24px;
+--sub:#777;
 
---shadow:0 12px 35px rgba(0,0,0,.10);
+--shadow:0 15px 40px rgba(0,0,0,.08);
+
+--radius:22px;
 
 }
 
 body{
 
-background:linear-gradient(180deg,var(--background),var(--background2));
+background:linear-gradient(180deg,var(--bg1),var(--bg2));
 
 color:var(--text);
 
@@ -49,24 +49,10 @@ inset:0;
 
 background:
 
-radial-gradient(circle at top,#FFE08266 0%,transparent 45%),
+radial-gradient(circle at top,#FFE08255 0%,transparent 40%),
 
-linear-gradient(180deg,#FFFDF6,#EEF8FF);
-
-z-index:-1;
-
-}
-
-.container{
-
-width:min(430px,100%);
-
-margin:auto;
-
-padding:18px;
-
-}
-.topHeader{
+linear-gradient(180
+                .topHeader{
 
 display:flex;
 
@@ -74,27 +60,17 @@ justify-content:space-between;
 
 align-items:center;
 
-margin-bottom:30px;
+margin-bottom:25px;
 
 }
 
 .logo{
 
-font-size:32px;
+font-size:30px;
 
 font-weight:800;
 
 color:#D89A00;
-
-}
-
-#welcome{
-
-margin-top:6px;
-
-font-size:18px;
-
-font-weight:700;
 
 }
 
@@ -108,7 +84,7 @@ border:none;
 
 border-radius:50%;
 
-background:linear-gradient(135deg,#FFD54F,#FFCA28);
+background:#FFD54F;
 
 font-size:24px;
 
@@ -116,7 +92,7 @@ cursor:pointer;
 
 box-shadow:var(--shadow);
 
-transition:.3s;
+transition:.25s;
 
 }
 
@@ -125,11 +101,7 @@ transition:.3s;
 transform:scale(1.05);
 
 }
-/* ==========================================
-   Sana
-========================================== */
-
-#sunCharacter{
+#character{
 
 display:flex;
 
@@ -143,11 +115,9 @@ margin:25px 0;
 
 #sana{
 
-width:180px;
+width:190px;
 
 animation:float 3s ease-in-out infinite;
-
-user-select:none;
 
 }
 
@@ -165,39 +135,30 @@ user-select:none;
 
 background:#fff;
 
-padding:16px 20px;
+padding:16px 22px;
 
-border-radius:22px;
+border-radius:20px;
 
 box-shadow:var(--shadow);
 
-margin-bottom:18px;
+margin-bottom:15px;
 
-max-width:300px;
+max-width:280px;
 
 text-align:center;
-
-font-size:16px;
 
 font-weight:700;
 
 line-height:1.8;
 
 }
-
-#speechText{
-
-min-height:40px;
-
-}
-
 .card{
 
 background:var(--card);
 
 backdrop-filter:blur(20px);
 
-border-radius:var(--radius);
+border-radius:22px;
 
 padding:22px;
 
@@ -211,54 +172,7 @@ box-shadow:var(--shadow);
 
 margin-bottom:16px;
 
-font-size:20px;
-
-font-weight:800;
-
-}
-.mainCard{
-
-text-align:center;
-
-}
-
-.doseButton{
-
-width:100%;
-
-height:60px;
-
-border:none;
-
-border-radius:18px;
-
-background:linear-gradient(135deg,#FFD54F,#FFB300);
-
-font-size:20px;
-
-font-weight:800;
-
-cursor:pointer;
-
-transition:.25s;
-
-box-shadow:0 10px 25px rgba(255,193,7,.35);
-
-}
-
-.doseButton:hover{
-
-transform:translateY(-3px);
-
-}
-
-#message{
-
-margin-top:15px;
-
-font-size:16px;
-
-color:var(--sub);
+font-size:21px;
 
 }
 
@@ -268,17 +182,15 @@ display:grid;
 
 grid-template-columns:repeat(2,1fr);
 
-gap:16px;
+gap:15px;
 
-margin-bottom:20px;
+margin-bottom:18px;
 
 }
 
 .statCard{
 
-background:rgba(255,255,255,.75);
-
-backdrop-filter:blur(16px);
+background:#ffffffcc;
 
 border-radius:20px;
 
@@ -300,7 +212,7 @@ transform:translateY(-4px);
 
 .icon{
 
-font-size:30px;
+font-size:28px;
 
 margin-bottom:10px;
 
@@ -308,24 +220,80 @@ margin-bottom:10px;
 
 .statCard h3{
 
-font-size:28px;
+font-size:30px;
 
 color:#D89A00;
 
-margin-bottom:6px;
+margin-bottom:5px;
+
+font-weight:800;
 
 }
-/* ==========================================
-   Progress
-========================================== */
 
-.progress{
+.statCard p{
+
+font-size:14px;
+
+color:var(--sub);
+
+}
+.mainCard{
+
+text-align:center;
+
+}
+
+.doseButton{
 
 width:100%;
 
+height:62px;
+
+border:none;
+
+border-radius:18px;
+
+background:linear-gradient(135deg,#FFD54F,#FFCA28);
+
+font-size:20px;
+
+font-weight:800;
+
+cursor:pointer;
+
+box-shadow:0 10px 25px rgba(255,193,7,.35);
+
+transition:.25s;
+
+}
+
+.doseButton:hover{
+
+transform:translateY(-3px);
+
+}
+
+.doseButton:active{
+
+transform:scale(.97);
+
+}
+
+#message{
+
+margin-top:15px;
+
+color:#666;
+
+font-size:16px;
+
+}
+
+.progress{
+
 height:14px;
 
-background:#ECECEC;
+background:#ececec;
 
 border-radius:999px;
 
@@ -337,13 +305,11 @@ margin:15px 0;
 
 #progressBar{
 
-width:0%;
-
 height:100%;
 
-background:linear-gradient(90deg,#FFD54F,#FFB300);
+width:0;
 
-border-radius:999px;
+background:linear-gradient(90deg,#FFD54F,#FFB300);
 
 transition:.5s;
 
@@ -351,17 +317,34 @@ transition:.5s;
 
 #progressText{
 
-text-align:center;
-
 font-weight:700;
 
-font-size:18px;
+text-align:center;
+
+}
+#badges{
+
+display:flex;
+
+flex-wrap:wrap;
+
+gap:10px;
 
 }
 
-/* ==========================================
-   Calendar
-========================================== */
+.badge{
+
+padding:10px 15px;
+
+background:#FFF6CF;
+
+border-radius:999px;
+
+font-weight:700;
+
+font-size:14px;
+
+}
 
 #calendar{
 
@@ -385,13 +368,11 @@ align-items:center;
 
 justify-content:center;
 
-border-radius:14px;
+border-radius:12px;
 
-background:#F5F5F5;
+background:#F3F3F3;
 
 font-weight:700;
-
-transition:.3s;
 
 }
 
@@ -405,50 +386,40 @@ border:2px solid #FFD54F;
 
 background:#FFD54F;
 
-color:#222;
+}
+.sideMenu{
+
+position:fixed;
+
+top:0;
+
+right:-340px;
+
+width:320px;
+
+max-width:90%;
+
+height:100%;
+
+background:#fff;
+
+padding:22px;
+
+box-shadow:-10px 0 30px rgba(0,0,0,.15);
+
+transition:.35s;
+
+z-index:100;
+
+overflow-y:auto;
 
 }
 
-/* ==========================================
-   Badges
-========================================== */
+.sideMenu.open{
 
-#badges{
-
-display:flex;
-
-flex-wrap:wrap;
-
-gap:10px;
+right:0;
 
 }
-
-.badge{
-
-padding:10px 14px;
-
-background:#FFF7D6;
-
-border-radius:999px;
-
-font-size:14px;
-
-font-weight:700;
-
-color:#555;
-
-transition:.3s;
-
-}
-
-.badge:hover{
-
-transform:scale(1.05);
-
-}
-/* ==========================================
-   Side Menu
-========================================== */
 
 #overlay{
 
@@ -464,7 +435,7 @@ visibility:hidden;
 
 transition:.3s;
 
-z-index:99;
+z-index:90;
 
 }
 
@@ -473,40 +444,6 @@ z-index:99;
 opacity:1;
 
 visibility:visible;
-
-}
-
-.sideMenu{
-
-position:fixed;
-
-top:0;
-
-right:-340px;
-
-width:320px;
-
-max-width:90%;
-
-height:100%;
-
-background:#FFF;
-
-padding:22px;
-
-transition:.35s;
-
-box-shadow:-8px 0 25px rgba(0,0,0,.15);
-
-z-index:100;
-
-overflow-y:auto;
-
-}
-
-.sideMenu.open{
-
-right:0;
 
 }
 
@@ -528,9 +465,9 @@ width:100%;
 
 padding:14px;
 
-margin-bottom:14px;
+margin-bottom:15px;
 
-border:1px solid #DDD;
+border:1px solid #ddd;
 
 border-radius:14px;
 
@@ -546,7 +483,7 @@ align-items:center;
 
 gap:10px;
 
-margin:16px 0;
+margin:15px 0;
 
 font-weight:700;
 
@@ -571,16 +508,62 @@ font-weight:700;
 cursor:pointer;
 
 }
+.dark{
 
-/* ==========================================
-   Footer
-========================================== */
+background:#121212;
+
+color:#fff;
+
+}
+
+.dark .background{
+
+background:#121212;
+
+}
+
+.dark .card,
+.dark .statCard,
+.dark .sideMenu,
+.dark #speechBubble{
+
+background:#222;
+
+color:#fff;
+
+}
+
+.dark input{
+
+background:#333;
+
+color:#fff;
+
+border:1px solid #444;
+
+}
+
+.dark .day{
+
+background:#333;
+
+color:#fff;
+
+}
+
+.dark .badge{
+
+background:#3a3a3a;
+
+color:#FFD54F;
+
+}
 
 footer{
 
 text-align:center;
 
-padding:25px 10px;
+margin:40px 0 20px;
 
 color:#777;
 
@@ -596,74 +579,29 @@ margin-bottom:8px;
 
 }
 
-/* ==========================================
-   Dark Mode
-========================================== */
-
-body.dark{
-
-background:#121212;
-
-color:#FFF;
-
-}
-
-body.dark .background{
-
-background:#121212;
-
-}
-
-body.dark .card,
-body.dark .statCard,
-body.dark .sideMenu,
-body.dark #speechBubble{
-
-background:#222;
-
-color:#FFF;
-
-}
-
-body.dark input{
-
-background:#333;
-
-color:#FFF;
-
-border-color:#444;
-
-}
-
-body.dark .day{
-
-background:#333;
-
-color:#FFF;
-
-}
-
-/* ==========================================
-   Responsive
-========================================== */
-
 @media(max-width:480px){
 
 .container{
 
-padding:15px;
+padding:16px;
 
 }
 
 #sana{
 
-width:160px;
+width:170px;
 
 }
 
 .dashboard{
 
 gap:12px;
+
+}
+
+.card{
+
+padding:18px;
 
 }
 
