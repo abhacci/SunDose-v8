@@ -442,3 +442,108 @@ futureCard.style.display="block";
 welcome.innerHTML="☀️ أهلاً " + memory.name;
 
 };
+/* ==========================================
+   Intro System
+========================================== */
+
+const introCard = document.getElementById("introCard");
+
+const genderQuestion = document.getElementById("genderQuestion");
+const nameQuestion = document.getElementById("nameQuestion");
+const birthQuestion = document.getElementById("birthQuestion");
+const medicineQuestion = document.getElementById("medicineQuestion");
+
+const maleBtn = document.getElementById("maleBtn");
+const femaleBtn = document.getElementById("femaleBtn");
+
+const nextName = document.getElementById("nextName");
+const nextBirth = document.getElementById("nextBirth");
+const finishIntro = document.getElementById("finishIntro");
+
+const userNameInput = document.getElementById("userNameInput");
+const birthInput = document.getElementById("birthInput");
+const medicineName = document.getElementById("medicineName");
+
+function showApp(){
+
+document.querySelector(".mainCard").style.display="block";
+document.querySelector(".dashboard").style.display="grid";
+
+document.getElementById("progressCard").style.display="block";
+document.getElementById("badgesCard").style.display="block";
+document.getElementById("calendarCard").style.display="block";
+document.getElementById("quoteCard").style.display="block";
+document.getElementById("futureCard").style.display="block";
+
+}
+
+if(localStorage.getItem("firstVisit")==="true"){
+
+introCard.style.display="none";
+showApp();
+
+}else{
+
+document.querySelector(".mainCard").style.display="none";
+document.querySelector(".dashboard").style.display="none";
+
+}
+
+maleBtn.onclick=function(){
+
+localStorage.setItem("gender","male");
+
+genderQuestion.style.display="none";
+nameQuestion.style.display="block";
+
+};
+
+femaleBtn.onclick=function(){
+
+localStorage.setItem("gender","female");
+
+genderQuestion.style.display="none";
+nameQuestion.style.display="block";
+
+};
+
+nextName.onclick=function(){
+
+if(userNameInput.value.trim()==="") return;
+
+nameQuestion.style.display="none";
+birthQuestion.style.display="block";
+
+};
+
+nextBirth.onclick=function(){
+
+if(birthInput.value==="") return;
+
+birthQuestion.style.display="none";
+medicineQuestion.style.display="block";
+
+};
+
+finishIntro.onclick=function(){
+
+memory.name=userNameInput.value.trim();
+memory.medicine=medicineName.value.trim();
+
+saveMemory();
+
+localStorage.setItem("birthDate",birthInput.value);
+localStorage.setItem("firstVisit","true");
+
+introCard.style.display="none";
+
+showApp();
+
+welcome.innerHTML="☀️ أهلاً "+memory.name;
+
+updateDashboard();
+updateBadges();
+buildCalendar();
+updateQuote();
+
+};
